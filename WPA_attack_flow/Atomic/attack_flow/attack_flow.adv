@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ASCII"?>
+<models:AdviseAtomicModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:models="http://www.mobius.illinois.edu/atomic/advise/" name="attack_flow">
+  <aeg adviseModel="/">
+    <skillElements key="ARP packet forging">
+      <value name="ARP packet forging" codename="ARPpacketforging" xpos="446" ypos="619" sourceArcs="//@aeg/@arcElements.6" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <skillElements key="Social Engineering">
+      <value name="Social Engineering" codename="SocialEngineering" xpos="-231" ypos="489" sourceArcs="//@aeg/@arcElements.22" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <skillElements key="AP Configuration">
+      <value name="AP Configuration" codename="APConfiguration" xpos="102" ypos="190" sourceArcs="//@aeg/@arcElements.17 //@aeg/@arcElements.24" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <skillElements key="Network Hacking">
+      <value name="Network Hacking" codename="NetworkHacking" xpos="624" ypos="170" sourceArcs="//@aeg/@arcElements.4" attackExecutionGraph="//@aeg"/>
+    </skillElements>
+    <knowledgeElements key="No Key/No Access">
+      <value name="No Key/No Access" codename="NoKey/NoAccess" xpos="-577" ypos="406" sourceArcs="//@aeg/@arcElements.15 //@aeg/@arcElements.20" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="SSID &amp; MAC target network">
+      <value name="SSID &amp; MAC target network" codename="SSIDMACtargetnetwork" xpos="-235" ypos="278" sourceArcs="//@aeg/@arcElements.18" targetArcs="//@aeg/@arcElements.9" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="Key">
+      <value name="Key" codename="Key" xpos="94" ypos="408" sourceArcs="//@aeg/@arcElements.3 //@aeg/@arcElements.10" targetArcs="//@aeg/@arcElements.19 //@aeg/@arcElements.21" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="Network Access">
+      <value name="Network Access" codename="NetworkAccess" xpos="281" ypos="507" sourceArcs="//@aeg/@arcElements.12" targetArcs="//@aeg/@arcElements.11" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <knowledgeElements key="Client Session Hijacking">
+      <value name="Client Session Hijacking" codename="ClientSessionHijacking" xpos="625" ypos="504" sourceArcs="//@aeg/@arcElements.7" targetArcs="//@aeg/@arcElements.1" attackExecutionGraph="//@aeg"/>
+    </knowledgeElements>
+    <accessElements key="AP Hardware">
+      <value name="AP Hardware" codename="APHardware" xpos="100" ypos="280" sourceArcs="//@aeg/@arcElements.16 //@aeg/@arcElements.23" attackExecutionGraph="//@aeg"/>
+    </accessElements>
+    <stepElements key="Do Nothing">
+      <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 0;">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Deterministic">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="ARP Spoofing">
+      <value name="ARP Spoofing" codename="ARPSpoofing" xpos="392" ypos="505" sourceArcs="//@aeg/@arcElements.1" targetArcs="//@aeg/@arcElements.6 //@aeg/@arcElements.12" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Evil Twin">
+      <value name="Evil Twin" codename="EvilTwin" xpos="213" ypos="283" sourceArcs="//@aeg/@arcElements.2" targetArcs="//@aeg/@arcElements.3 //@aeg/@arcElements.23 //@aeg/@arcElements.24" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Block Traffic Flow">
+      <value name="Block Traffic Flow" codename="BlockTrafficFlow" xpos="575" ypos="394" sourceArcs="//@aeg/@arcElements.8" targetArcs="//@aeg/@arcElements.7 //@aeg/@arcElements.14" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Network scanning">
+      <value name="Network scanning" codename="Networkscanning" xpos="-433" ypos="276" sourceArcs="//@aeg/@arcElements.9" targetArcs="//@aeg/@arcElements.15" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Join Network">
+      <value name="Join Network" codename="JoinNetwork" xpos="38" ypos="504" sourceArcs="//@aeg/@arcElements.11" targetArcs="//@aeg/@arcElements.10" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Rogue AP">
+      <value name="Rogue AP" codename="RogueAP" xpos="-127" ypos="280" sourceArcs="//@aeg/@arcElements.19" targetArcs="//@aeg/@arcElements.16 //@aeg/@arcElements.17 //@aeg/@arcElements.18" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Password Capture">
+      <value name="Password Capture" codename="PasswordCapture" xpos="-282" ypos="407" sourceArcs="//@aeg/@arcElements.21" targetArcs="//@aeg/@arcElements.20 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <stepElements key="Application Layer Attack">
+      <value name="Application Layer Attack" codename="ApplicationLayerAttack" xpos="579" ypos="279" sourceArcs="//@aeg/@arcElements.0" targetArcs="//@aeg/@arcElements.4 //@aeg/@arcElements.13" attackExecutionGraph="//@aeg" width="150">
+        <outcomes key="Outcome 1">
+          <value name="Outcome 1" probability="return 1;" detection="return 0;" effects=""/>
+        </outcomes>
+        <timing distributionType="Exponential">
+          <parameters>return 1;</parameters>
+        </timing>
+      </value>
+    </stepElements>
+    <goalElements key="DoS">
+      <value name="DoS" codename="DoS" xpos="764" ypos="396" targetArcs="//@aeg/@arcElements.8" attackExecutionGraph="//@aeg" width="75"/>
+    </goalElements>
+    <goalElements key="Sensitive Information ">
+      <value name="Sensitive Information " codename="SensitiveInformation" xpos="765" ypos="280" targetArcs="//@aeg/@arcElements.0" attackExecutionGraph="//@aeg" width="75"/>
+    </goalElements>
+    <goalElements key="MITM">
+      <value name="MITM" codename="MITM" xpos="432" ypos="285" sourceArcs="//@aeg/@arcElements.13 //@aeg/@arcElements.14" targetArcs="//@aeg/@arcElements.2" attackExecutionGraph="//@aeg" width="75"/>
+    </goalElements>
+    <arcElements sourceName="SSL Stripping" targetName="Sensitive Information " sourceType="Step" targetType="Goal"/>
+    <arcElements sourceName="ARP Spoofing" targetName="Keyed Client Session Hijacking" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="Evil Twin" targetName="MITM" sourceType="Step" targetType="Goal"/>
+    <arcElements sourceName="Key Acquisition" targetName="Evil Twin" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Phishing" targetName="SSL Stripping" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="DNS packet forging" targetName="DNS Spoofing" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="ARP packet forging" targetName="ARP Spoofing" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="Keyed Client Session Hijacking" targetName="Block Traffic Flow" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Block Traffic Flow" targetName="DoS" sourceType="Step" targetType="Goal"/>
+    <arcElements sourceName="Network scanning" targetName="SSID &amp; MAC target network" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="Key Acquisition" targetName="Join Network" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Join Network" targetName="Network Joined" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="Network Joined" targetName="ARP Spoofing" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="MITM" targetName="Application Layer Attack" sourceType="Goal" targetType="Step"/>
+    <arcElements sourceName="MITM" targetName="Block Traffic Flow" sourceType="Goal" targetType="Step"/>
+    <arcElements sourceName="No Key/No Access" targetName="Network scanning" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="AP Hardware" targetName="Rogue AP" targetType="Step"/>
+    <arcElements sourceName="AP Configuration" targetName="Rogue AP" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="SSID &amp; MAC target network" targetName="Rogue AP" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Rogue AP" targetName="Key" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="No Key/No Access" targetName="Password Capture" sourceType="Knowledge" targetType="Step"/>
+    <arcElements sourceName="Password Capture" targetName="Key" sourceType="Step" targetType="Knowledge"/>
+    <arcElements sourceName="Social Engineering" targetName="Social Engineering" sourceType="Skill" targetType="Step"/>
+    <arcElements sourceName="AP Hardware" targetName="Evil Twin" targetType="Step"/>
+    <arcElements sourceName="AP Configuration" targetName="Evil Twin" sourceType="Skill" targetType="Step"/>
+  </aeg>
+  <adversary name="AdversaryName" codename="AdversaryName"/>
+</models:AdviseAtomicModel>
