@@ -3,4 +3,13 @@
   <atomic key="attack_flow">
     <value name="attack_flow" type="ADVISE Model"/>
   </atomic>
+  <reward key="reward">
+    <value name="reward" category="Reward" type="Performance Variables Model"/>
+  </reward>
+  <study key="study">
+    <value name="study" category="Study" type="Range Study"/>
+  </study>
+  <solver key="simulation">
+    <value name="simulation" category="Solver" type="Simulator"/>
+  </solver>
 </models:Project>

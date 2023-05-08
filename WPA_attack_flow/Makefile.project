@@ -3,18 +3,18 @@
 
 .SUFFIXES: .o .cpp
 
-MOBIUSROOT=     /usr/share/mobius-2.5/
+MOBIUSROOT=     /C/Mobius-2.5/
 ROOTDIR= ../..
 MOBIUSPROJECT= ../..
 USERINCLUDE= -I$(MOBIUSROOT)
 
-override linux_CC=g++
-override linux_LD=ld
-override linux_MAKE=make
-override linux_AR=ar
-override linux_RANLIB=ranlib
-override linux_OCFLAGS=
-override linux_LINK_FLAGS=
-override linux_MKDIR= mkdir
+override win32_CC=g++
+override win32_LD=ld
+override win32_MAKE=make
+override win32_AR=ar
+override win32_RANLIB=ranlib
+override win32_OCFLAGS=
+override win32_LINK_FLAGS=
+override win32_MKDIR= mkdir
 
 
