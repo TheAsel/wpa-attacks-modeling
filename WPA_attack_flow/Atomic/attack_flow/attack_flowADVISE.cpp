@@ -127,14 +127,14 @@ attack_flowADVISE::attack_flowADVISE() {
   Hijacking = new Knowledge("Hijacking", 0);
   SSIDMACtargetnetwork = new Knowledge("SSIDMACtargetnetwork", 0);
   NetworkAccess = new Knowledge("NetworkAccess", 0);
-  Key = new Knowledge("Key", 1);
-  NoKeyNoAccess = new Knowledge("NoKeyNoAccess", 0);
+  NetworkKey = new Knowledge("NetworkKey", 0);
+  NoKeyNoAccess = new Knowledge("NoKeyNoAccess", 1);
   PacketForging = new Skill("PacketForging", 10);
   SocialEngineering = new Skill("SocialEngineering", 10);
   APConfiguration = new Skill("APConfiguration", 10);
   NetworkHacking = new Skill("NetworkHacking", 10);
   DOS = new Goal("DOS", 0);
-  DOS->setPayoff(1);
+  DOS->setPayoff(700);
   MITM = new Goal("MITM", 0);
   MITM->setPayoff(500);
   SensitiveInformation = new Goal("SensitiveInformation", 0);
@@ -170,7 +170,7 @@ attack_flowADVISE::attack_flowADVISE() {
     Hijacking, // 1
     SSIDMACtargetnetwork, // 2
     NetworkAccess, // 3
-    Key, // 4
+    NetworkKey, // 4
     NoKeyNoAccess, // 5
     PacketForging, // 6
     SocialEngineering, // 7
@@ -227,9 +227,9 @@ attack_flowADVISE::attack_flowADVISE() {
     {30,11}, {11,11}, {0,11}, {4,11}, {31,12}, {15,12}, {22,12}, {23,12}, 
     {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, {30,12}, {3,12}, 
     {4,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, {25,13}, {26,13}, 
-    {27,13}, {28,13}, {29,13}, {30,13}, {4,13}, {0,13}, {2,13}, {31,14}, 
+    {27,13}, {28,13}, {29,13}, {30,13}, {4,13}, {2,13}, {0,13}, {31,14}, 
     {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, {26,14}, {27,14}, {28,14}, 
-    {29,14}, {30,14}, {4,14}, {0,14}, {2,14}, {31,15}, {17,15}, {22,15}, 
+    {29,14}, {30,14}, {4,14}, {2,14}, {0,14}, {31,15}, {17,15}, {22,15}, 
     {23,15}, {24,15}, {25,15}, {26,15}, {27,15}, {28,15}, {29,15}, {30,15}, 
     {10,15}, {11,15}, {1,15}, {31,16}, {17,16}, {22,16}, {23,16}, {24,16}, 
     {25,16}, {26,16}, {27,16}, {28,16}, {29,16}, {30,16}, {10,16}, {11,16}, 
@@ -288,7 +288,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   EvilTwinFailure.MITM = MITM;
   EvilTwinFailure.APHardware = APHardware;
   EvilTwinFailure.APConfiguration = APConfiguration;
-  EvilTwinFailure.Key = Key;
+  EvilTwinFailure.NetworkKey = NetworkKey;
   EvilTwinFailure.EvilTwinChosen = EvilTwinChosen;
   EvilTwinFailure.NetworkscanningWeight = NetworkscanningWeight;
   EvilTwinFailure.EvilTwinWeight = EvilTwinWeight;
@@ -304,7 +304,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   EvilTwinSuccess.MITM = MITM;
   EvilTwinSuccess.APHardware = APHardware;
   EvilTwinSuccess.APConfiguration = APConfiguration;
-  EvilTwinSuccess.Key = Key;
+  EvilTwinSuccess.NetworkKey = NetworkKey;
   EvilTwinSuccess.EvilTwinChosen = EvilTwinChosen;
   EvilTwinSuccess.NetworkscanningWeight = NetworkscanningWeight;
   EvilTwinSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -318,7 +318,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   EvilTwinSuccess.MakeDecision = MakeDecision;
   EvilTwinSuccess.setSVs(EvilTwinChosen, EvilTwinWeight);
   JoinNetworkSuccess.NetworkAccess = NetworkAccess;
-  JoinNetworkSuccess.Key = Key;
+  JoinNetworkSuccess.NetworkKey = NetworkKey;
   JoinNetworkSuccess.JoinNetworkChosen = JoinNetworkChosen;
   JoinNetworkSuccess.NetworkscanningWeight = NetworkscanningWeight;
   JoinNetworkSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -331,10 +331,10 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   JoinNetworkSuccess.DoNothingWeight = DoNothingWeight;
   JoinNetworkSuccess.MakeDecision = MakeDecision;
   JoinNetworkSuccess.setSVs(JoinNetworkChosen, JoinNetworkWeight);
-  RogueAPFailure.Key = Key;
+  RogueAPFailure.NetworkKey = NetworkKey;
+  RogueAPFailure.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPFailure.APHardware = APHardware;
   RogueAPFailure.APConfiguration = APConfiguration;
-  RogueAPFailure.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPFailure.RogueAPChosen = RogueAPChosen;
   RogueAPFailure.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPFailure.EvilTwinWeight = EvilTwinWeight;
@@ -347,10 +347,10 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPFailure.DoNothingWeight = DoNothingWeight;
   RogueAPFailure.MakeDecision = MakeDecision;
   RogueAPFailure.setSVs(RogueAPChosen, RogueAPWeight);
-  RogueAPSuccess.Key = Key;
+  RogueAPSuccess.NetworkKey = NetworkKey;
+  RogueAPSuccess.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPSuccess.APHardware = APHardware;
   RogueAPSuccess.APConfiguration = APConfiguration;
-  RogueAPSuccess.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPSuccess.RogueAPChosen = RogueAPChosen;
   RogueAPSuccess.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -453,7 +453,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   NetworkLayerAttackSuccess.DoNothingWeight = DoNothingWeight;
   NetworkLayerAttackSuccess.MakeDecision = MakeDecision;
   NetworkLayerAttackSuccess.setSVs(NetworkLayerAttackChosen, NetworkLayerAttackWeight);
-  PasswordCaptureFailure.Key = Key;
+  PasswordCaptureFailure.NetworkKey = NetworkKey;
   PasswordCaptureFailure.SocialEngineering = SocialEngineering;
   PasswordCaptureFailure.NoKeyNoAccess = NoKeyNoAccess;
   PasswordCaptureFailure.PasswordCaptureChosen = PasswordCaptureChosen;
@@ -468,7 +468,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   PasswordCaptureFailure.DoNothingWeight = DoNothingWeight;
   PasswordCaptureFailure.MakeDecision = MakeDecision;
   PasswordCaptureFailure.setSVs(PasswordCaptureChosen, PasswordCaptureWeight);
-  PasswordCaptureSuccess.Key = Key;
+  PasswordCaptureSuccess.NetworkKey = NetworkKey;
   PasswordCaptureSuccess.SocialEngineering = SocialEngineering;
   PasswordCaptureSuccess.NoKeyNoAccess = NoKeyNoAccess;
   PasswordCaptureSuccess.PasswordCaptureChosen = PasswordCaptureChosen;
@@ -629,7 +629,7 @@ int attack_flowADVISE::NetworkscanningSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::NetworkscanningSuccessStep::preconditionsMet() {
-return NoKeyNoAccess->Mark() && !SSIDMACtargetnetwork->Mark();
+return (NoKeyNoAccess->Mark() && !(SSIDMACtargetnetwork->Mark()));
   return true;
 }
 
@@ -663,7 +663,7 @@ void attack_flowADVISE::EvilTwinFailureStep::LinkVariables() {
   MITM->Register(&MITM_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
   EvilTwinChosen->Register(&EvilTwinChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -714,16 +714,16 @@ int attack_flowADVISE::EvilTwinFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::EvilTwinFailureStep::preconditionsMet() {
-return Key->Mark() && APHardware->Mark() && (APConfiguration->Mark()>6) && !MITM->Mark(); 
+return (NetworkKey->Mark() && (APHardware->Mark() == 1) && (APConfiguration->Mark() > 6) && !MITM->Mark()); 
   return true;
 }
 
 void attack_flowADVISE::EvilTwinFailureStep::executeEffects() {
-MITM->Mark() = false;
+
 }
 
 double attack_flowADVISE::EvilTwinFailureStep::getCost() {
-return 6;
+return 3;
 }
 
 double attack_flowADVISE::EvilTwinFailureStep::getOutcomeProbability() {
@@ -748,7 +748,7 @@ void attack_flowADVISE::EvilTwinSuccessStep::LinkVariables() {
   MITM->Register(&MITM_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
   EvilTwinChosen->Register(&EvilTwinChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -799,7 +799,7 @@ int attack_flowADVISE::EvilTwinSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::EvilTwinSuccessStep::preconditionsMet() {
-return Key->Mark() && APHardware->Mark() && (APConfiguration->Mark()>6) && !MITM->Mark(); 
+return (NetworkKey->Mark() && (APHardware->Mark() == 1) && (APConfiguration->Mark() > 6) && !MITM->Mark()); 
   return true;
 }
 
@@ -808,7 +808,7 @@ MITM->Mark() = true;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getCost() {
-return 6;
+return 3;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getOutcomeProbability() {
@@ -816,7 +816,7 @@ if (APConfiguration->Mark() > 8) return 0.9; else return 0.3;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getDetection() {
-return 0.3;
+return 0;
 }
 
 /*====================== JoinNetworkSuccessStep ========================*/
@@ -831,7 +831,7 @@ attack_flowADVISE::JoinNetworkSuccessStep::~JoinNetworkSuccessStep() {
 
 void attack_flowADVISE::JoinNetworkSuccessStep::LinkVariables() {
   NetworkAccess->Register(&NetworkAccess_Mobius_Mark);
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
   JoinNetworkChosen->Register(&JoinNetworkChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -882,7 +882,7 @@ int attack_flowADVISE::JoinNetworkSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::JoinNetworkSuccessStep::preconditionsMet() {
-return Key->Mark() && !NetworkAccess->Mark();
+return (NetworkKey->Mark() && !NetworkAccess->Mark());
   return true;
 }
 
@@ -899,7 +899,7 @@ return 1;
 }
 
 double attack_flowADVISE::JoinNetworkSuccessStep::getDetection() {
-return 0.1;
+return 0;
 }
 
 /*====================== RogueAPFailureStep ========================*/
@@ -913,10 +913,10 @@ attack_flowADVISE::RogueAPFailureStep::~RogueAPFailureStep() {
 }
 
 void attack_flowADVISE::RogueAPFailureStep::LinkVariables() {
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
+  SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -942,7 +942,7 @@ return 6;
 }
 
 double attack_flowADVISE::RogueAPFailureStep::Weight() {
-if (APConfiguration->Mark()>8) return 0.2; else return 0.5;
+if (APConfiguration->Mark() > 8) return 0.2; else return 0.5;
 }
 
 bool attack_flowADVISE::RogueAPFailureStep::ReactivationPredicate() {
@@ -967,24 +967,24 @@ int attack_flowADVISE::RogueAPFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::RogueAPFailureStep::preconditionsMet() {
-return ((!Key->Mark()) && (SSIDMACtargetnetwork->Mark() && (APConfiguration->Mark()>6))&& (APHardware->Mark()));
+return (!NetworkKey->Mark() && SSIDMACtargetnetwork->Mark() && (APHardware->Mark() == 1) && (APConfiguration->Mark() > 6));
   return true;
 }
 
 void attack_flowADVISE::RogueAPFailureStep::executeEffects() {
-Key->Mark() = false;
+
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getCost() {
-return 4;
+return 2;
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getOutcomeProbability() {
-if (APConfiguration->Mark()>8) return 0.2; else return 0.5;
+if (APConfiguration->Mark() > 8) return 0.2; else return 0.5;
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getDetection() {
-return 0.7;
+return 0.3;
 }
 
 /*====================== RogueAPSuccessStep ========================*/
@@ -998,10 +998,10 @@ attack_flowADVISE::RogueAPSuccessStep::~RogueAPSuccessStep() {
 }
 
 void attack_flowADVISE::RogueAPSuccessStep::LinkVariables() {
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
+  SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1027,7 +1027,7 @@ return 6;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::Weight() {
-if (APConfiguration->Mark()>8) return 0.8; else return 0.5;
+if (APConfiguration->Mark() > 8) return 0.8; else return 0.5;
 }
 
 bool attack_flowADVISE::RogueAPSuccessStep::ReactivationPredicate() {
@@ -1052,24 +1052,24 @@ int attack_flowADVISE::RogueAPSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::RogueAPSuccessStep::preconditionsMet() {
-return ((!Key->Mark()) && (SSIDMACtargetnetwork->Mark() && (APConfiguration->Mark()>6))&& (APHardware->Mark()));
+return (!NetworkKey->Mark() && SSIDMACtargetnetwork->Mark() && (APHardware->Mark() == 1) && (APConfiguration->Mark() > 6));
   return true;
 }
 
 void attack_flowADVISE::RogueAPSuccessStep::executeEffects() {
-Key->Mark() = true;
+NetworkKey->Mark() = true;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getCost() {
-return 4;
+return 2;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getOutcomeProbability() {
-if (APConfiguration->Mark()>8) return 0.8; else return 0.5;
+if (APConfiguration->Mark() > 8) return 0.8; else return 0.5;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getDetection() {
-return 0.7;
+return 0;
 }
 
 /*====================== BlockTrafficFlowFailureStep ========================*/
@@ -1136,16 +1136,16 @@ int attack_flowADVISE::BlockTrafficFlowFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowFailureStep::preconditionsMet() {
-return ((Hijacking->Mark() || MITM->Mark()) && !DOS->Mark());
+return (!DOS->Mark() && (Hijacking->Mark() || MITM->Mark()));
   return true;
 }
 
 void attack_flowADVISE::BlockTrafficFlowFailureStep::executeEffects() {
-DOS->Mark() = false;
+
 }
 
 double attack_flowADVISE::BlockTrafficFlowFailureStep::getCost() {
-return 3;
+return 2;
 }
 
 double attack_flowADVISE::BlockTrafficFlowFailureStep::getOutcomeProbability() {
@@ -1153,7 +1153,7 @@ return 0.1;
 }
 
 double attack_flowADVISE::BlockTrafficFlowFailureStep::getDetection() {
-return 0.2;
+return 0.1;
 }
 
 /*====================== BlockTrafficFlowSuccessStep ========================*/
@@ -1220,7 +1220,7 @@ int attack_flowADVISE::BlockTrafficFlowSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowSuccessStep::preconditionsMet() {
-return ((Hijacking->Mark() || MITM->Mark()) && !DOS->Mark());
+return (!DOS->Mark() && (Hijacking->Mark() || MITM->Mark()));
   return true;
 }
 
@@ -1229,7 +1229,7 @@ DOS->Mark() = true;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getCost() {
-return 3;
+return 2;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getOutcomeProbability() {
@@ -1237,7 +1237,7 @@ return 0.9;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getDetection() {
-return 0.8;
+return 0;
 }
 
 /*====================== ApplicationLayerAttackFailureStep ========================*/
@@ -1304,17 +1304,16 @@ int attack_flowADVISE::ApplicationLayerAttackFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackFailureStep::preconditionsMet() {
-return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark()>8));
-
+return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark() > 8));
   return true;
 }
 
 void attack_flowADVISE::ApplicationLayerAttackFailureStep::executeEffects() {
-SensitiveInformation->Mark() = false;
+
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::getCost() {
-return 10;
+return 5;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::getOutcomeProbability() {
@@ -1389,8 +1388,7 @@ int attack_flowADVISE::ApplicationLayerAttackSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackSuccessStep::preconditionsMet() {
-return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark()>8));
-
+return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark() > 8));
   return true;
 }
 
@@ -1399,7 +1397,7 @@ SensitiveInformation->Mark() = true;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::getCost() {
-return 10;
+return 5;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::getOutcomeProbability() {
@@ -1449,7 +1447,7 @@ return 4;
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::Weight() {
-if( PacketForging->Mark()>9) return 0.1; else 0.3;
+if (PacketForging->Mark()>9) return 0.1; else 0.3;
 }
 
 bool attack_flowADVISE::NetworkLayerAttackFailureStep::ReactivationPredicate() {
@@ -1474,24 +1472,24 @@ int attack_flowADVISE::NetworkLayerAttackFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::NetworkLayerAttackFailureStep::preconditionsMet() {
-return NetworkAccess->Mark() && !Hijacking->Mark() && (PacketForging->Mark()>7);
+return (NetworkAccess->Mark() && !Hijacking->Mark() && (PacketForging->Mark() > 7));
   return true;
 }
 
 void attack_flowADVISE::NetworkLayerAttackFailureStep::executeEffects() {
-Hijacking->Mark() = true;
+
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getCost() {
-return 4;
+return 2;
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getOutcomeProbability() {
-if( PacketForging->Mark()>9) return 0.1; else 0.3;
+if (PacketForging->Mark()>9) return 0.1; else 0.3;
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getDetection() {
-return 0.3;
+return 0.1;
 }
 
 /*====================== NetworkLayerAttackSuccessStep ========================*/
@@ -1558,16 +1556,16 @@ int attack_flowADVISE::NetworkLayerAttackSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::NetworkLayerAttackSuccessStep::preconditionsMet() {
-return NetworkAccess->Mark() && !Hijacking->Mark() && (PacketForging->Mark()>7);
+return (NetworkAccess->Mark() && !Hijacking->Mark() && (PacketForging->Mark() > 7));
   return true;
 }
 
 void attack_flowADVISE::NetworkLayerAttackSuccessStep::executeEffects() {
-Hijacking->Mark() = false;
+Hijacking->Mark() = true;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getCost() {
-return 4;
+return 2;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getOutcomeProbability() {
@@ -1575,21 +1573,21 @@ if (PacketForging->Mark()>9) return 0.9; else 0.7;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getDetection() {
-return 0.3;
+return 0;
 }
 
 /*====================== PasswordCaptureFailureStep ========================*/
 
 attack_flowADVISE::PasswordCaptureFailureStep::PasswordCaptureFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("PasswordCaptureFailureStep", 7, Exponential, RaceEnabled, 14, 1, false);}
+  commonInit("PasswordCaptureFailureStep", 7, Deterministic, RaceEnabled, 14, 1, false);}
 
 attack_flowADVISE::PasswordCaptureFailureStep::~PasswordCaptureFailureStep() {
   delete[] TheDistributionParameters;
 }
 
 void attack_flowADVISE::PasswordCaptureFailureStep::LinkVariables() {
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
   SocialEngineering->Register(&SocialEngineering_Mobius_Mark);
   NoKeyNoAccess->Register(&NoKeyNoAccess_Mobius_Mark);
   PasswordCaptureChosen->Register(&PasswordCaptureChosen_Mobius_Mark);
@@ -1613,7 +1611,7 @@ bool attack_flowADVISE::PasswordCaptureFailureStep::Enabled() {
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::timeDistributionParameter0() {
-return 1;
+return 8;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::Weight() {
@@ -1629,7 +1627,7 @@ bool attack_flowADVISE::PasswordCaptureFailureStep::ReactivationFunction() {
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::SampleDistribution() {
-  return TheDistribution->Exponential(timeDistributionParameter0());
+  return TheDistribution->Deterministic(timeDistributionParameter0());
 }
 
 double *attack_flowADVISE::PasswordCaptureFailureStep::ReturnDistributionParameters() {
@@ -1642,16 +1640,16 @@ int attack_flowADVISE::PasswordCaptureFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::PasswordCaptureFailureStep::preconditionsMet() {
-return ((!Key->Mark()) && (NoKeyNoAccess->Mark()) && ((SocialEngineering->Mark()>5)));
+return (!NetworkKey->Mark() && NoKeyNoAccess->Mark() && (SocialEngineering->Mark() > 5));
   return true;
 }
 
 void attack_flowADVISE::PasswordCaptureFailureStep::executeEffects() {
-Key->Mark() = false;
+
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getCost() {
-return 6;
+return 2;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getOutcomeProbability() {
@@ -1659,21 +1657,21 @@ if (SocialEngineering->Mark()>7) return 0.1; else return 0.7;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getDetection() {
-return 0.5;
+return 0.1;
 }
 
 /*====================== PasswordCaptureSuccessStep ========================*/
 
 attack_flowADVISE::PasswordCaptureSuccessStep::PasswordCaptureSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("PasswordCaptureSuccessStep", 7, Exponential, RaceEnabled, 14, 1, false);}
+  commonInit("PasswordCaptureSuccessStep", 7, Deterministic, RaceEnabled, 14, 1, false);}
 
 attack_flowADVISE::PasswordCaptureSuccessStep::~PasswordCaptureSuccessStep() {
   delete[] TheDistributionParameters;
 }
 
 void attack_flowADVISE::PasswordCaptureSuccessStep::LinkVariables() {
-  Key->Register(&Key_Mobius_Mark);
+  NetworkKey->Register(&NetworkKey_Mobius_Mark);
   SocialEngineering->Register(&SocialEngineering_Mobius_Mark);
   NoKeyNoAccess->Register(&NoKeyNoAccess_Mobius_Mark);
   PasswordCaptureChosen->Register(&PasswordCaptureChosen_Mobius_Mark);
@@ -1697,7 +1695,7 @@ bool attack_flowADVISE::PasswordCaptureSuccessStep::Enabled() {
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::timeDistributionParameter0() {
-return 1;
+return 8;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::Weight() {
@@ -1713,7 +1711,7 @@ bool attack_flowADVISE::PasswordCaptureSuccessStep::ReactivationFunction() {
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::SampleDistribution() {
-  return TheDistribution->Exponential(timeDistributionParameter0());
+  return TheDistribution->Deterministic(timeDistributionParameter0());
 }
 
 double *attack_flowADVISE::PasswordCaptureSuccessStep::ReturnDistributionParameters() {
@@ -1726,16 +1724,16 @@ int attack_flowADVISE::PasswordCaptureSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::PasswordCaptureSuccessStep::preconditionsMet() {
-return ((!Key->Mark()) && (NoKeyNoAccess->Mark()) && ((SocialEngineering->Mark()>5)));
+return (!NetworkKey->Mark() && NoKeyNoAccess->Mark() && (SocialEngineering->Mark() > 5));
   return true;
 }
 
 void attack_flowADVISE::PasswordCaptureSuccessStep::executeEffects() {
-Key->Mark() = true;
+NetworkKey->Mark() = true;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getCost() {
-return 6;
+return 2;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getOutcomeProbability() {
@@ -1743,7 +1741,7 @@ if (SocialEngineering->Mark()>7) return 0.9; else return 0.3;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getDetection() {
-return 0.5;
+return 0;
 }
 
 /*====================== DoNothingOutcome1Step ========================*/
@@ -1824,7 +1822,7 @@ return 1;
 }
 
 double attack_flowADVISE::DoNothingOutcome1Step::getDetection() {
-return 0;
+return 1;
 }
 
 /*****************************************************************/

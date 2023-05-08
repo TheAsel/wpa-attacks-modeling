@@ -1,11 +1,11 @@
 Simulator Results
-Date:, Mon May 08 14:44:05 CEST 2023
+Date:, Mon May 08 22:52:20 CEST 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
 Project Name:,WPA_attack_flow
 Study Name:,study
-Random Number Generator:,Tausworthe
+Random Number Generator:,Mersenne Twister
 Random Number Seed:,31756
 Maximum Batches:,10000
 Minimum Batches:,1000
@@ -20,108 +20,164 @@ Jackknife Variance:,On
 Processors Per Experiment:,1
 Maximize Processor Usage:,true
 Processors Selected for Simulation:
-LAPTOP-8I337PQF,amd64
+PC-Vecchio,amd64
 
 Experiment 1
-Experiment 1,Start Time:,Mon May 08 14:44:04 CEST 2023
-Experiment 1,Finish Time:,Mon May 08 14:44:05 CEST 2023
-Experiment 1,Elapsed Running Time:,0.901
-Experiment 1,Total CPU Time:,0.093
+Experiment 1,Start Time:,Mon May 08 22:52:16 CEST 2023
+Experiment 1,Finish Time:,Mon May 08 22:52:17 CEST 2023
+Experiment 1,Elapsed Running Time:,1.127
+Experiment 1,Total CPU Time:,0.196
 Experiment 1,Batches Completed:,1000
 Experiment 1,Experiment Name:,Experiment 1
 Experiment 1, Results
 Experiment 1,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
-Experiment 1,Mean,NoKeyNoAccess,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,NoKeyNoAccess,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,0.0,0.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,5.0,5.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,10.0,10.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,15.0,15.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,20.0,20.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,25.0,25.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,30.0,30.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,35.0,35.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,40.0,40.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NoKeyNoAccess,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,SSIDandMAC,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,SSIDandMAC,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,0.0,0.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,5.0,5.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,10.0,10.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,15.0,15.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,20.0,20.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,25.0,25.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,30.0,30.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,35.0,35.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,40.0,40.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Key,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,5.0,5.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,10.0,10.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,15.0,15.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,20.0,20.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,25.0,25.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,30.0,30.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,35.0,35.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,40.0,40.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,SSIDandMAC,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,10.0,10.0,9,1100000000E-01,+/-,1,7657431050E-02
+Experiment 1,Mean,NetworkKey,15.0,15.0,9,1100000000E-01,+/-,1,7657431050E-02
+Experiment 1,Mean,NetworkKey,20.0,20.0,9,8900000000E-01,+/-,6,4679673006E-03
+Experiment 1,Mean,NetworkKey,25.0,25.0,9,8900000000E-01,+/-,6,4679673006E-03
+Experiment 1,Mean,NetworkKey,30.0,30.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,NetworkKey,35.0,35.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,NetworkKey,40.0,40.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,NetworkKey,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,NetworkKey,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Network Access,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Network Access,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Network Access,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Network Access,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,15.0,15.0,9,1100000000E-01,+/-,1,7657431050E-02
+Experiment 1,Mean,Network Access,20.0,20.0,9,8900000000E-01,+/-,6,4679673006E-03
+Experiment 1,Mean,Network Access,25.0,25.0,9,8900000000E-01,+/-,6,4679673006E-03
+Experiment 1,Mean,Network Access,30.0,30.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Network Access,35.0,35.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Network Access,40.0,40.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Network Access,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Network Access,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Hijacking,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Hijacking,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Hijacking,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Hijacking,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,15.0,15.0,8,2000000000E-01,+/-,2,3824100146E-02
+Experiment 1,Mean,Hijacking,20.0,20.0,9,0500000000E-01,+/-,1,8182743802E-02
+Experiment 1,Mean,Hijacking,25.0,25.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 1,Mean,Hijacking,30.0,30.0,9,8800000000E-01,+/-,6,7521553004E-03
+Experiment 1,Mean,Hijacking,35.0,35.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Hijacking,40.0,40.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Hijacking,45.0,45.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Hijacking,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Hijacking,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,MITM,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,MITM,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,MITM,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,MITM,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,MITM,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,MITM,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,25.0,25.0,6,6500000000E-01,+/-,2,9268910282E-02
+Experiment 1,Mean,MITM,30.0,30.0,8,0200000000E-01,+/-,2,4711158511E-02
+Experiment 1,Mean,MITM,35.0,35.0,9,5700000000E-01,+/-,1,2579504184E-02
+Experiment 1,Mean,MITM,40.0,40.0,9,7200000000E-01,+/-,1,0230231827E-02
+Experiment 1,Mean,MITM,45.0,45.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,MITM,50.0,50.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,MITM,55.0,55.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,MITM,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,MITM,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,DOS,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,DOS,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,DOS,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,DOS,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,DOS,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,20.0,20.0,8,1300000000E-01,+/-,2,4179059463E-02
+Experiment 1,Mean,DOS,25.0,25.0,9,7700000000E-01,+/-,9,2957519655E-03
+Experiment 1,Mean,DOS,30.0,30.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 1,Mean,DOS,35.0,35.0,9,9600000000E-01,+/-,3,9141096886E-03
+Experiment 1,Mean,DOS,40.0,40.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,DOS,45.0,45.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,DOS,50.0,50.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,55.0,55.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,DOS,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Sensitive Information,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Sensitive Information,5.0,5.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Sensitive Information,10.0,10.0,0,0000000000E00 ,+/-,0,0000000000E00 
@@ -129,11 +185,19 @@ Experiment 1,Mean,Sensitive Information,15.0,15.0,0,0000000000E00 ,+/-,0,0000000
 Experiment 1,Mean,Sensitive Information,20.0,20.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Sensitive Information,25.0,25.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 1,Mean,Sensitive Information,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,35.0,35.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,40.0,40.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,50.0,50.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,55.0,55.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 1,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,35.0,35.0,7,2700000000E-01,+/-,2,7626244823E-02
+Experiment 1,Mean,Sensitive Information,40.0,40.0,9,4800000000E-01,+/-,1,3768263459E-02
+Experiment 1,Mean,Sensitive Information,45.0,45.0,9,7100000000E-01,+/-,1,0405954944E-02
+Experiment 1,Mean,Sensitive Information,50.0,50.0,9,9500000000E-01,+/-,4,3739102747E-03
+Experiment 1,Mean,Sensitive Information,55.0,55.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Sensitive Information,60.0,60.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 1,Mean,Sensitive Information,65.0,65.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,70.0,70.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,75.0,75.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,80.0,80.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,85.0,85.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,90.0,90.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,95.0,95.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 1,Mean,Sensitive Information,100.0,100.0,1,0000000000E00 ,+/-,0,0000000000E00 
 
 <END_MOBIUS_RESULTS>

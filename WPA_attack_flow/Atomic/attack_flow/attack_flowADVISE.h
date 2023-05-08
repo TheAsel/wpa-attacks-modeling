@@ -300,8 +300,8 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -353,8 +353,8 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -402,8 +402,8 @@ public:
 
   Knowledge *NetworkAccess;
   short* NetworkAccess_Mobius_Mark;
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
   StepChosen *JoinNetworkChosen;
   short *JoinNetworkChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -449,14 +449,14 @@ public:
 class RogueAPFailureStep : public Step {
 public:
 
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
+  Knowledge *SSIDMACtargetnetwork;
+  short* SSIDMACtargetnetwork_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Knowledge *SSIDMACtargetnetwork;
-  short* SSIDMACtargetnetwork_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -502,14 +502,14 @@ public:
 class RogueAPSuccessStep : public Step {
 public:
 
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
+  Knowledge *SSIDMACtargetnetwork;
+  short* SSIDMACtargetnetwork_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Knowledge *SSIDMACtargetnetwork;
-  short* SSIDMACtargetnetwork_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -861,8 +861,8 @@ public:
 class PasswordCaptureFailureStep : public Step {
 public:
 
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
   Skill *SocialEngineering;
   short* SocialEngineering_Mobius_Mark;
   Knowledge *NoKeyNoAccess;
@@ -912,8 +912,8 @@ public:
 class PasswordCaptureSuccessStep : public Step {
 public:
 
-  Knowledge *Key;
-  short* Key_Mobius_Mark;
+  Knowledge *NetworkKey;
+  short* NetworkKey_Mobius_Mark;
   Skill *SocialEngineering;
   short* SocialEngineering_Mobius_Mark;
   Knowledge *NoKeyNoAccess;
@@ -1010,7 +1010,7 @@ public:
   Knowledge *Hijacking;
   Knowledge *SSIDMACtargetnetwork;
   Knowledge *NetworkAccess;
-  Knowledge *Key;
+  Knowledge *NetworkKey;
   Knowledge *NoKeyNoAccess;
   Skill *PacketForging;
   Skill *SocialEngineering;

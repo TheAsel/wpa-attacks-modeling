@@ -15,7 +15,7 @@
 			</class>
 			<boolean id="UsingJackknife">true</boolean>
 			<string id="ArchiveFile"></string>
-			<byte id="RandomNumberGenerator">1</byte>
+			<byte id="RandomNumberGenerator">2</byte>
 			<long id="RandomNumberSeed">31756</long>
 			<long id="MaximumBatches">10000</long>
 			<long id="MinimumBatches">1000</long>
@@ -28,7 +28,7 @@
 			<boolean id="MaximizeProcessorUsage">true</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
 			<int id="NumMachines">1</int>
-			<string id="MachineName">LAPTOP-8I337PQF</string>
+			<string id="MachineName">PC-Vecchio</string>
 			<int id="NumGroups">0</int>
 			<string id="StudyName">study</string>
 			<boolean id="TerminatingSimulation">true</boolean>
