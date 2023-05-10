@@ -125,6 +125,7 @@ attack_flowADVISE::attack_flowADVISE() {
 
   APHardware = new Access("APHardware", 1);
   Hijacking = new Knowledge("Hijacking", 0);
+  MITM = new Knowledge("MITM", 0);
   SSIDMACtargetnetwork = new Knowledge("SSIDMACtargetnetwork", 0);
   NetworkAccess = new Knowledge("NetworkAccess", 0);
   NetworkKey = new Knowledge("NetworkKey", 0);
@@ -134,9 +135,7 @@ attack_flowADVISE::attack_flowADVISE() {
   APConfiguration = new Skill("APConfiguration", 10);
   NetworkHacking = new Skill("NetworkHacking", 10);
   DOS = new Goal("DOS", 0);
-  DOS->setPayoff(700);
-  MITM = new Goal("MITM", 0);
-  MITM->setPayoff(500);
+  DOS->setPayoff(500);
   SensitiveInformation = new Goal("SensitiveInformation", 0);
   SensitiveInformation->setPayoff(1000);
   MakeDecision = new BeginAdversaryDecision("MakeDecision", 0);
@@ -159,25 +158,24 @@ attack_flowADVISE::attack_flowADVISE() {
   DoNothingWeight = new StepWeight("DoNothingWeight", 0);
   DoNothingChosen = new StepChosen("DoNothingChosen", 0);
 
-  Goal* InitialGoals[3] = {
+  Goal* InitialGoals[2] = {
       DOS,
-      MITM,
       SensitiveInformation
   };
 
   ADVISEStateVariable* InitialSVs[32] = {
     APHardware, // 0
     Hijacking, // 1
-    SSIDMACtargetnetwork, // 2
-    NetworkAccess, // 3
-    NetworkKey, // 4
-    NoKeyNoAccess, // 5
-    PacketForging, // 6
-    SocialEngineering, // 7
-    APConfiguration, // 8
-    NetworkHacking, // 9
-    DOS, // 10
-    MITM, // 11
+    MITM, // 2
+    SSIDMACtargetnetwork, // 3
+    NetworkAccess, // 4
+    NetworkKey, // 5
+    NoKeyNoAccess, // 6
+    PacketForging, // 7
+    SocialEngineering, // 8
+    APConfiguration, // 9
+    NetworkHacking, // 10
+    DOS, // 11
     SensitiveInformation, // 12
     NetworkscanningChosen, // 13
     EvilTwinChosen, // 14
@@ -202,7 +200,7 @@ attack_flowADVISE::attack_flowADVISE() {
 
   int outCounts[9] = { 1, 2, 1, 2, 2, 2, 2, 2, 1 };
 
-  commonInit("attack_flow", 32, InitialSVs, 24, InitialActions, 10, InitialGroups, 9, outCounts, InitialSteps, 3, InitialGoals);
+  commonInit("attack_flow", 32, InitialSVs, 24, InitialActions, 10, InitialGroups, 9, outCounts, InitialSteps, 2, InitialGoals);
 
   advCostPref = 0.1;
   advDetectPref = 0.1;
@@ -215,45 +213,45 @@ attack_flowADVISE::attack_flowADVISE() {
 
   assignSVsToAttackSteps();
 
-  int AffectArcs[226][2] = {
+  int AffectArcs[230][2] = {
     {31,0}, {13,0}, {22,0}, {31,1}, {14,1}, {23,1}, {31,2}, {15,2}, 
     {24,2}, {31,3}, {16,3}, {25,3}, {31,4}, {17,4}, {26,4}, {31,5}, 
     {18,5}, {27,5}, {31,6}, {19,6}, {28,6}, {31,7}, {20,7}, {29,7}, 
     {31,8}, {21,8}, {30,8}, {31,9}, {13,9}, {22,9}, {23,9}, {24,9}, 
-    {25,9}, {26,9}, {27,9}, {28,9}, {29,9}, {30,9}, {2,9}, {5,9}, 
+    {25,9}, {26,9}, {27,9}, {28,9}, {29,9}, {30,9}, {3,9}, {6,9}, 
     {31,10}, {14,10}, {22,10}, {23,10}, {24,10}, {25,10}, {26,10}, {27,10}, 
-    {28,10}, {29,10}, {30,10}, {11,10}, {0,10}, {4,10}, {31,11}, {14,11}, 
+    {28,10}, {29,10}, {30,10}, {2,10}, {0,10}, {5,10}, {31,11}, {14,11}, 
     {22,11}, {23,11}, {24,11}, {25,11}, {26,11}, {27,11}, {28,11}, {29,11}, 
-    {30,11}, {11,11}, {0,11}, {4,11}, {31,12}, {15,12}, {22,12}, {23,12}, 
-    {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, {30,12}, {3,12}, 
-    {4,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, {25,13}, {26,13}, 
-    {27,13}, {28,13}, {29,13}, {30,13}, {4,13}, {2,13}, {0,13}, {31,14}, 
+    {30,11}, {2,11}, {0,11}, {5,11}, {31,12}, {15,12}, {22,12}, {23,12}, 
+    {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, {30,12}, {4,12}, 
+    {5,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, {25,13}, {26,13}, 
+    {27,13}, {28,13}, {29,13}, {30,13}, {5,13}, {3,13}, {0,13}, {31,14}, 
     {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, {26,14}, {27,14}, {28,14}, 
-    {29,14}, {30,14}, {4,14}, {2,14}, {0,14}, {31,15}, {17,15}, {22,15}, 
+    {29,14}, {30,14}, {5,14}, {3,14}, {0,14}, {31,15}, {17,15}, {22,15}, 
     {23,15}, {24,15}, {25,15}, {26,15}, {27,15}, {28,15}, {29,15}, {30,15}, 
-    {10,15}, {11,15}, {1,15}, {31,16}, {17,16}, {22,16}, {23,16}, {24,16}, 
-    {25,16}, {26,16}, {27,16}, {28,16}, {29,16}, {30,16}, {10,16}, {11,16}, 
-    {1,16}, {31,17}, {18,17}, {22,17}, {23,17}, {24,17}, {25,17}, {26,17}, 
-    {27,17}, {28,17}, {29,17}, {30,17}, {12,17}, {11,17}, {31,18}, {18,18}, 
-    {22,18}, {23,18}, {24,18}, {25,18}, {26,18}, {27,18}, {28,18}, {29,18}, 
-    {30,18}, {12,18}, {11,18}, {31,19}, {19,19}, {22,19}, {23,19}, {24,19}, 
-    {25,19}, {26,19}, {27,19}, {28,19}, {29,19}, {30,19}, {1,19}, {3,19}, 
-    {31,20}, {19,20}, {22,20}, {23,20}, {24,20}, {25,20}, {26,20}, {27,20}, 
-    {28,20}, {29,20}, {30,20}, {1,20}, {3,20}, {31,21}, {20,21}, {22,21}, 
-    {23,21}, {24,21}, {25,21}, {26,21}, {27,21}, {28,21}, {29,21}, {30,21}, 
-    {4,21}, {5,21}, {31,22}, {20,22}, {22,22}, {23,22}, {24,22}, {25,22}, 
-    {26,22}, {27,22}, {28,22}, {29,22}, {30,22}, {4,22}, {5,22}, {31,23}, 
-    {21,23}, {22,23}, {23,23}, {24,23}, {25,23}, {26,23}, {27,23}, {28,23}, 
-    {29,23}, {30,23}
+    {11,15}, {1,15}, {2,15}, {12,15}, {31,16}, {17,16}, {22,16}, {23,16}, 
+    {24,16}, {25,16}, {26,16}, {27,16}, {28,16}, {29,16}, {30,16}, {11,16}, 
+    {1,16}, {2,16}, {12,16}, {31,17}, {18,17}, {22,17}, {23,17}, {24,17}, 
+    {25,17}, {26,17}, {27,17}, {28,17}, {29,17}, {30,17}, {12,17}, {2,17}, 
+    {11,17}, {31,18}, {18,18}, {22,18}, {23,18}, {24,18}, {25,18}, {26,18}, 
+    {27,18}, {28,18}, {29,18}, {30,18}, {12,18}, {2,18}, {11,18}, {31,19}, 
+    {19,19}, {22,19}, {23,19}, {24,19}, {25,19}, {26,19}, {27,19}, {28,19}, 
+    {29,19}, {30,19}, {1,19}, {4,19}, {31,20}, {19,20}, {22,20}, {23,20}, 
+    {24,20}, {25,20}, {26,20}, {27,20}, {28,20}, {29,20}, {30,20}, {1,20}, 
+    {4,20}, {31,21}, {20,21}, {22,21}, {23,21}, {24,21}, {25,21}, {26,21}, 
+    {27,21}, {28,21}, {29,21}, {30,21}, {5,21}, {6,21}, {31,22}, {20,22}, 
+    {22,22}, {23,22}, {24,22}, {25,22}, {26,22}, {27,22}, {28,22}, {29,22}, 
+    {30,22}, {5,22}, {6,22}, {31,23}, {21,23}, {22,23}, {23,23}, {24,23}, 
+    {25,23}, {26,23}, {27,23}, {28,23}, {29,23}, {30,23}
 };
-  for(int n = 0; n < 226;n++)
+  for(int n = 0; n < 230;n++)
     AddAffectArc(InitialSVs[AffectArcs[n][0]], InitialActions[AffectArcs[n][1]]);
   int EnableArcs[38][2] = {
     {31,0}, {31,1}, {31,2}, {31,3}, {31,4}, {31,5}, {31,6}, {31,7}, 
-    {31,8}, {13,9}, {2,9}, {14,10}, {11,10}, {14,11}, {11,11}, {15,12}, 
-    {3,12}, {16,13}, {4,13}, {16,14}, {4,14}, {17,15}, {10,15}, {17,16}, 
-    {10,16}, {18,17}, {12,17}, {18,18}, {12,18}, {19,19}, {1,19}, {19,20}, 
-    {1,20}, {20,21}, {4,21}, {20,22}, {4,22}, {21,23}
+    {31,8}, {13,9}, {3,9}, {14,10}, {2,10}, {14,11}, {2,11}, {15,12}, 
+    {4,12}, {16,13}, {5,13}, {16,14}, {5,14}, {17,15}, {11,15}, {17,16}, 
+    {11,16}, {18,17}, {12,17}, {18,18}, {12,18}, {19,19}, {1,19}, {19,20}, 
+    {1,20}, {20,21}, {5,21}, {20,22}, {5,22}, {21,23}
 };
   for(int n = 0; n < 38;n++)
     AddEnableArc(InitialSVs[EnableArcs[n][0]], InitialActions[EnableArcs[n][1]]);
@@ -364,8 +362,9 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPSuccess.MakeDecision = MakeDecision;
   RogueAPSuccess.setSVs(RogueAPChosen, RogueAPWeight);
   BlockTrafficFlowFailure.DOS = DOS;
-  BlockTrafficFlowFailure.MITM = MITM;
   BlockTrafficFlowFailure.Hijacking = Hijacking;
+  BlockTrafficFlowFailure.MITM = MITM;
+  BlockTrafficFlowFailure.SensitiveInformation = SensitiveInformation;
   BlockTrafficFlowFailure.BlockTrafficFlowChosen = BlockTrafficFlowChosen;
   BlockTrafficFlowFailure.NetworkscanningWeight = NetworkscanningWeight;
   BlockTrafficFlowFailure.EvilTwinWeight = EvilTwinWeight;
@@ -379,8 +378,9 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   BlockTrafficFlowFailure.MakeDecision = MakeDecision;
   BlockTrafficFlowFailure.setSVs(BlockTrafficFlowChosen, BlockTrafficFlowWeight);
   BlockTrafficFlowSuccess.DOS = DOS;
-  BlockTrafficFlowSuccess.MITM = MITM;
   BlockTrafficFlowSuccess.Hijacking = Hijacking;
+  BlockTrafficFlowSuccess.MITM = MITM;
+  BlockTrafficFlowSuccess.SensitiveInformation = SensitiveInformation;
   BlockTrafficFlowSuccess.BlockTrafficFlowChosen = BlockTrafficFlowChosen;
   BlockTrafficFlowSuccess.NetworkscanningWeight = NetworkscanningWeight;
   BlockTrafficFlowSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -394,8 +394,9 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   BlockTrafficFlowSuccess.MakeDecision = MakeDecision;
   BlockTrafficFlowSuccess.setSVs(BlockTrafficFlowChosen, BlockTrafficFlowWeight);
   ApplicationLayerAttackFailure.SensitiveInformation = SensitiveInformation;
-  ApplicationLayerAttackFailure.MITM = MITM;
   ApplicationLayerAttackFailure.NetworkHacking = NetworkHacking;
+  ApplicationLayerAttackFailure.MITM = MITM;
+  ApplicationLayerAttackFailure.DOS = DOS;
   ApplicationLayerAttackFailure.ApplicationLayerAttackChosen = ApplicationLayerAttackChosen;
   ApplicationLayerAttackFailure.NetworkscanningWeight = NetworkscanningWeight;
   ApplicationLayerAttackFailure.EvilTwinWeight = EvilTwinWeight;
@@ -409,8 +410,9 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   ApplicationLayerAttackFailure.MakeDecision = MakeDecision;
   ApplicationLayerAttackFailure.setSVs(ApplicationLayerAttackChosen, ApplicationLayerAttackWeight);
   ApplicationLayerAttackSuccess.SensitiveInformation = SensitiveInformation;
-  ApplicationLayerAttackSuccess.MITM = MITM;
   ApplicationLayerAttackSuccess.NetworkHacking = NetworkHacking;
+  ApplicationLayerAttackSuccess.MITM = MITM;
+  ApplicationLayerAttackSuccess.DOS = DOS;
   ApplicationLayerAttackSuccess.ApplicationLayerAttackChosen = ApplicationLayerAttackChosen;
   ApplicationLayerAttackSuccess.NetworkscanningWeight = NetworkscanningWeight;
   ApplicationLayerAttackSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -723,7 +725,7 @@ void attack_flowADVISE::EvilTwinFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::EvilTwinFailureStep::getCost() {
-return 3;
+return 6;
 }
 
 double attack_flowADVISE::EvilTwinFailureStep::getOutcomeProbability() {
@@ -731,7 +733,7 @@ if (APConfiguration->Mark() > 8) return 0.1; else return 0.7;
 }
 
 double attack_flowADVISE::EvilTwinFailureStep::getDetection() {
-return 0.2;
+return 0.7;
 }
 
 /*====================== EvilTwinSuccessStep ========================*/
@@ -808,7 +810,7 @@ MITM->Mark() = true;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getCost() {
-return 3;
+return 6;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getOutcomeProbability() {
@@ -816,7 +818,7 @@ if (APConfiguration->Mark() > 8) return 0.9; else return 0.3;
 }
 
 double attack_flowADVISE::EvilTwinSuccessStep::getDetection() {
-return 0;
+return 0.2;
 }
 
 /*====================== JoinNetworkSuccessStep ========================*/
@@ -976,7 +978,7 @@ void attack_flowADVISE::RogueAPFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getCost() {
-return 2;
+return 4;
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getOutcomeProbability() {
@@ -984,7 +986,7 @@ if (APConfiguration->Mark() > 8) return 0.2; else return 0.5;
 }
 
 double attack_flowADVISE::RogueAPFailureStep::getDetection() {
-return 0.3;
+return 0.5;
 }
 
 /*====================== RogueAPSuccessStep ========================*/
@@ -1061,7 +1063,7 @@ NetworkKey->Mark() = true;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getCost() {
-return 2;
+return 4;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getOutcomeProbability() {
@@ -1069,14 +1071,14 @@ if (APConfiguration->Mark() > 8) return 0.8; else return 0.5;
 }
 
 double attack_flowADVISE::RogueAPSuccessStep::getDetection() {
-return 0;
+return 0.1;
 }
 
 /*====================== BlockTrafficFlowFailureStep ========================*/
 
 attack_flowADVISE::BlockTrafficFlowFailureStep::BlockTrafficFlowFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("BlockTrafficFlowFailureStep", 4, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("BlockTrafficFlowFailureStep", 4, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::BlockTrafficFlowFailureStep::~BlockTrafficFlowFailureStep() {
   delete[] TheDistributionParameters;
@@ -1084,8 +1086,9 @@ attack_flowADVISE::BlockTrafficFlowFailureStep::~BlockTrafficFlowFailureStep() {
 
 void attack_flowADVISE::BlockTrafficFlowFailureStep::LinkVariables() {
   DOS->Register(&DOS_Mobius_Mark);
-  MITM->Register(&MITM_Mobius_Mark);
   Hijacking->Register(&Hijacking_Mobius_Mark);
+  MITM->Register(&MITM_Mobius_Mark);
+  SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
   BlockTrafficFlowChosen->Register(&BlockTrafficFlowChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1136,7 +1139,7 @@ int attack_flowADVISE::BlockTrafficFlowFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowFailureStep::preconditionsMet() {
-return (!DOS->Mark() && (Hijacking->Mark() || MITM->Mark()));
+return (!DOS->Mark() && !SensitiveInformation->Mark() && (MITM->Mark() || Hijacking->Mark()));
   return true;
 }
 
@@ -1145,7 +1148,7 @@ void attack_flowADVISE::BlockTrafficFlowFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::BlockTrafficFlowFailureStep::getCost() {
-return 2;
+return 3;
 }
 
 double attack_flowADVISE::BlockTrafficFlowFailureStep::getOutcomeProbability() {
@@ -1160,7 +1163,7 @@ return 0.1;
 
 attack_flowADVISE::BlockTrafficFlowSuccessStep::BlockTrafficFlowSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("BlockTrafficFlowSuccessStep", 4, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("BlockTrafficFlowSuccessStep", 4, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::BlockTrafficFlowSuccessStep::~BlockTrafficFlowSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1168,8 +1171,9 @@ attack_flowADVISE::BlockTrafficFlowSuccessStep::~BlockTrafficFlowSuccessStep() {
 
 void attack_flowADVISE::BlockTrafficFlowSuccessStep::LinkVariables() {
   DOS->Register(&DOS_Mobius_Mark);
-  MITM->Register(&MITM_Mobius_Mark);
   Hijacking->Register(&Hijacking_Mobius_Mark);
+  MITM->Register(&MITM_Mobius_Mark);
+  SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
   BlockTrafficFlowChosen->Register(&BlockTrafficFlowChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1220,7 +1224,7 @@ int attack_flowADVISE::BlockTrafficFlowSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowSuccessStep::preconditionsMet() {
-return (!DOS->Mark() && (Hijacking->Mark() || MITM->Mark()));
+return (!DOS->Mark() && !SensitiveInformation->Mark() && (MITM->Mark() || Hijacking->Mark()));
   return true;
 }
 
@@ -1229,7 +1233,7 @@ DOS->Mark() = true;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getCost() {
-return 2;
+return 3;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getOutcomeProbability() {
@@ -1237,14 +1241,14 @@ return 0.9;
 }
 
 double attack_flowADVISE::BlockTrafficFlowSuccessStep::getDetection() {
-return 0;
+return 0.5;
 }
 
 /*====================== ApplicationLayerAttackFailureStep ========================*/
 
 attack_flowADVISE::ApplicationLayerAttackFailureStep::ApplicationLayerAttackFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("ApplicationLayerAttackFailureStep", 5, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("ApplicationLayerAttackFailureStep", 5, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::ApplicationLayerAttackFailureStep::~ApplicationLayerAttackFailureStep() {
   delete[] TheDistributionParameters;
@@ -1252,8 +1256,9 @@ attack_flowADVISE::ApplicationLayerAttackFailureStep::~ApplicationLayerAttackFai
 
 void attack_flowADVISE::ApplicationLayerAttackFailureStep::LinkVariables() {
   SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
-  MITM->Register(&MITM_Mobius_Mark);
   NetworkHacking->Register(&NetworkHacking_Mobius_Mark);
+  MITM->Register(&MITM_Mobius_Mark);
+  DOS->Register(&DOS_Mobius_Mark);
   ApplicationLayerAttackChosen->Register(&ApplicationLayerAttackChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1279,7 +1284,7 @@ return 7;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::Weight() {
-if (NetworkHacking->Mark()>9) return 0; else 0.1;
+if (NetworkHacking->Mark() > 9) return 0; else 0.1;
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackFailureStep::ReactivationPredicate() {
@@ -1304,7 +1309,7 @@ int attack_flowADVISE::ApplicationLayerAttackFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackFailureStep::preconditionsMet() {
-return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark() > 8));
+return (MITM->Mark() && !SensitiveInformation->Mark() && !DOS->Mark() && (NetworkHacking->Mark() > 8));
   return true;
 }
 
@@ -1313,22 +1318,22 @@ void attack_flowADVISE::ApplicationLayerAttackFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::getCost() {
-return 5;
+return 10;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::getOutcomeProbability() {
-if (NetworkHacking->Mark()>9) return 0; else 0.1;
+if (NetworkHacking->Mark() > 9) return 0; else 0.1;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackFailureStep::getDetection() {
-if (NetworkHacking->Mark()>9) return 0.3; else 0.5;
+if (NetworkHacking->Mark() > 9) return 0.3; else 0.5;
 }
 
 /*====================== ApplicationLayerAttackSuccessStep ========================*/
 
 attack_flowADVISE::ApplicationLayerAttackSuccessStep::ApplicationLayerAttackSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("ApplicationLayerAttackSuccessStep", 5, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("ApplicationLayerAttackSuccessStep", 5, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::ApplicationLayerAttackSuccessStep::~ApplicationLayerAttackSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1336,8 +1341,9 @@ attack_flowADVISE::ApplicationLayerAttackSuccessStep::~ApplicationLayerAttackSuc
 
 void attack_flowADVISE::ApplicationLayerAttackSuccessStep::LinkVariables() {
   SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
-  MITM->Register(&MITM_Mobius_Mark);
   NetworkHacking->Register(&NetworkHacking_Mobius_Mark);
+  MITM->Register(&MITM_Mobius_Mark);
+  DOS->Register(&DOS_Mobius_Mark);
   ApplicationLayerAttackChosen->Register(&ApplicationLayerAttackChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1363,7 +1369,7 @@ return 7;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::Weight() {
-if (NetworkHacking->Mark()>9) return 1; else 0.9;
+if (NetworkHacking->Mark() > 9) return 1; else 0.9;
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackSuccessStep::ReactivationPredicate() {
@@ -1388,7 +1394,7 @@ int attack_flowADVISE::ApplicationLayerAttackSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::ApplicationLayerAttackSuccessStep::preconditionsMet() {
-return (MITM->Mark() && !SensitiveInformation->Mark() && (NetworkHacking->Mark() > 8));
+return (MITM->Mark() && !SensitiveInformation->Mark() && !DOS->Mark() && (NetworkHacking->Mark() > 8));
   return true;
 }
 
@@ -1397,15 +1403,15 @@ SensitiveInformation->Mark() = true;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::getCost() {
-return 5;
+return 10;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::getOutcomeProbability() {
-if (NetworkHacking->Mark()>9) return 1; else 0.9;
+if (NetworkHacking->Mark() > 9) return 1; else 0.9;
 }
 
 double attack_flowADVISE::ApplicationLayerAttackSuccessStep::getDetection() {
-if (NetworkHacking->Mark()>9) return 0; else 0.1;
+if (NetworkHacking->Mark() > 9) return 0; else 0.1;
 }
 
 /*====================== NetworkLayerAttackFailureStep ========================*/
@@ -1481,7 +1487,7 @@ void attack_flowADVISE::NetworkLayerAttackFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getCost() {
-return 2;
+return 4;
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getOutcomeProbability() {
@@ -1489,7 +1495,7 @@ if (PacketForging->Mark()>9) return 0.1; else 0.3;
 }
 
 double attack_flowADVISE::NetworkLayerAttackFailureStep::getDetection() {
-return 0.1;
+return 0.3;
 }
 
 /*====================== NetworkLayerAttackSuccessStep ========================*/
@@ -1565,7 +1571,7 @@ Hijacking->Mark() = true;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getCost() {
-return 2;
+return 4;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getOutcomeProbability() {
@@ -1573,7 +1579,7 @@ if (PacketForging->Mark()>9) return 0.9; else 0.7;
 }
 
 double attack_flowADVISE::NetworkLayerAttackSuccessStep::getDetection() {
-return 0;
+return 0.1;
 }
 
 /*====================== PasswordCaptureFailureStep ========================*/
@@ -1611,7 +1617,7 @@ bool attack_flowADVISE::PasswordCaptureFailureStep::Enabled() {
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::timeDistributionParameter0() {
-return 8;
+return 10;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::Weight() {
@@ -1649,7 +1655,7 @@ void attack_flowADVISE::PasswordCaptureFailureStep::executeEffects() {
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getCost() {
-return 2;
+return 6;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getOutcomeProbability() {
@@ -1657,7 +1663,7 @@ if (SocialEngineering->Mark()>7) return 0.1; else return 0.7;
 }
 
 double attack_flowADVISE::PasswordCaptureFailureStep::getDetection() {
-return 0.1;
+return 0.5;
 }
 
 /*====================== PasswordCaptureSuccessStep ========================*/
@@ -1695,7 +1701,7 @@ bool attack_flowADVISE::PasswordCaptureSuccessStep::Enabled() {
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::timeDistributionParameter0() {
-return 8;
+return 10;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::Weight() {
@@ -1733,7 +1739,7 @@ NetworkKey->Mark() = true;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getCost() {
-return 2;
+return 6;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getOutcomeProbability() {
@@ -1741,7 +1747,7 @@ if (SocialEngineering->Mark()>7) return 0.9; else return 0.3;
 }
 
 double attack_flowADVISE::PasswordCaptureSuccessStep::getDetection() {
-return 0;
+return 0.1;
 }
 
 /*====================== DoNothingOutcome1Step ========================*/
@@ -1822,7 +1828,7 @@ return 1;
 }
 
 double attack_flowADVISE::DoNothingOutcome1Step::getDetection() {
-return 1;
+return 0;
 }
 
 /*****************************************************************/

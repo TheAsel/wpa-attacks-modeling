@@ -294,7 +294,7 @@ public:
 class EvilTwinFailureStep : public Step {
 public:
 
-  Goal *MITM;
+  Knowledge *MITM;
   short* MITM_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
@@ -347,7 +347,7 @@ public:
 class EvilTwinSuccessStep : public Step {
 public:
 
-  Goal *MITM;
+  Knowledge *MITM;
   short* MITM_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
@@ -557,10 +557,12 @@ public:
 
   Goal *DOS;
   short* DOS_Mobius_Mark;
-  Goal *MITM;
-  short* MITM_Mobius_Mark;
   Knowledge *Hijacking;
   short* Hijacking_Mobius_Mark;
+  Knowledge *MITM;
+  short* MITM_Mobius_Mark;
+  Goal *SensitiveInformation;
+  short* SensitiveInformation_Mobius_Mark;
   StepChosen *BlockTrafficFlowChosen;
   short *BlockTrafficFlowChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -608,10 +610,12 @@ public:
 
   Goal *DOS;
   short* DOS_Mobius_Mark;
-  Goal *MITM;
-  short* MITM_Mobius_Mark;
   Knowledge *Hijacking;
   short* Hijacking_Mobius_Mark;
+  Knowledge *MITM;
+  short* MITM_Mobius_Mark;
+  Goal *SensitiveInformation;
+  short* SensitiveInformation_Mobius_Mark;
   StepChosen *BlockTrafficFlowChosen;
   short *BlockTrafficFlowChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -659,10 +663,12 @@ public:
 
   Goal *SensitiveInformation;
   short* SensitiveInformation_Mobius_Mark;
-  Goal *MITM;
-  short* MITM_Mobius_Mark;
   Skill *NetworkHacking;
   short* NetworkHacking_Mobius_Mark;
+  Knowledge *MITM;
+  short* MITM_Mobius_Mark;
+  Goal *DOS;
+  short* DOS_Mobius_Mark;
   StepChosen *ApplicationLayerAttackChosen;
   short *ApplicationLayerAttackChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -710,10 +716,12 @@ public:
 
   Goal *SensitiveInformation;
   short* SensitiveInformation_Mobius_Mark;
-  Goal *MITM;
-  short* MITM_Mobius_Mark;
   Skill *NetworkHacking;
   short* NetworkHacking_Mobius_Mark;
+  Knowledge *MITM;
+  short* MITM_Mobius_Mark;
+  Goal *DOS;
+  short* DOS_Mobius_Mark;
   StepChosen *ApplicationLayerAttackChosen;
   short *ApplicationLayerAttackChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -1008,6 +1016,7 @@ public:
   //List of user-specified state variables
   Access *APHardware;
   Knowledge *Hijacking;
+  Knowledge *MITM;
   Knowledge *SSIDMACtargetnetwork;
   Knowledge *NetworkAccess;
   Knowledge *NetworkKey;
@@ -1017,7 +1026,6 @@ public:
   Skill *APConfiguration;
   Skill *NetworkHacking;
   Goal *DOS;
-  Goal *MITM;
   Goal *SensitiveInformation;
   //List of attack step weight state variables
   StepWeight *NetworkscanningWeight;
