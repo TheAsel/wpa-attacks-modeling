@@ -5,10 +5,10 @@
       <value name="Social Engineering" codename="SocialEngineering" xpos="-231" ypos="489" sourceArcs="//@aeg/@arcElements.7" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="AP Configuration">
-      <value name="AP Configuration" codename="APConfiguration" xpos="102" ypos="190" sourceArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg"/>
+      <value name="AP Configuration" codename="APConfiguration" xpos="118" ypos="173" sourceArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Network Hacking">
-      <value name="Network Hacking" codename="NetworkHacking" xpos="803" ypos="138" sourceArcs="//@aeg/@arcElements.10" attackExecutionGraph="//@aeg"/>
+      <value name="Network Hacking" codename="NetworkHacking" xpos="811" ypos="132" sourceArcs="//@aeg/@arcElements.10" attackExecutionGraph="//@aeg"/>
     </skillElements>
     <skillElements key="Packet Forging">
       <value name="Packet Forging" codename="PacketForging" xpos="631" ypos="486" sourceArcs="//@aeg/@arcElements.12" attackExecutionGraph="//@aeg"/>
@@ -20,7 +20,7 @@
       <value name="Network Access" codename="NetworkAccess" xpos="484" ypos="412" sourceArcs="//@aeg/@arcElements.11" targetArcs="//@aeg/@arcElements.9" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <knowledgeElements key="Hijacking">
-      <value name="Hijacking" codename="Hijacking" xpos="804" ypos="418" sourceArcs="//@aeg/@arcElements.16" targetArcs="//@aeg/@arcElements.13" attackExecutionGraph="//@aeg"/>
+      <value name="Hijacking" codename="Hijacking" xpos="817" ypos="411" sourceArcs="//@aeg/@arcElements.16" targetArcs="//@aeg/@arcElements.13" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <knowledgeElements key="No Key No Access">
       <value name="No Key No Access" codename="NoKeyNoAccess" xpos="-537" ypos="403" sourceArcs="//@aeg/@arcElements.17 //@aeg/@arcElements.18" attackExecutionGraph="//@aeg"/>
@@ -32,7 +32,7 @@
       <value name="MITM" codename="MITM" xpos="572" ypos="283" sourceArcs="//@aeg/@arcElements.27 //@aeg/@arcElements.29" targetArcs="//@aeg/@arcElements.28" attackExecutionGraph="//@aeg"/>
     </knowledgeElements>
     <accessElements key="AP Hardware">
-      <value name="AP Hardware" codename="APHardware" xpos="100" ypos="280" sourceArcs="//@aeg/@arcElements.19 //@aeg/@arcElements.20" attackExecutionGraph="//@aeg"/>
+      <value name="AP Hardware" codename="APHardware" xpos="122" ypos="279" sourceArcs="//@aeg/@arcElements.19 //@aeg/@arcElements.20" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <stepElements key="Do Nothing">
       <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 0;">
@@ -104,7 +104,7 @@
       </value>
     </stepElements>
     <stepElements key="Application Layer Attack">
-      <value name="Application Layer Attack" codename="ApplicationLayerAttack" xpos="753" ypos="228" sourceArcs="//@aeg/@arcElements.15" targetArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.27 //@aeg/@arcElements.30" attackExecutionGraph="//@aeg" width="150" preconditions="return (MITM->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; !DOS->Mark() &amp;&amp; (NetworkHacking->Mark() > 8));" cost="return 10;">
+      <value name="Application Layer Attack" codename="ApplicationLayerAttack" xpos="761" ypos="222" sourceArcs="//@aeg/@arcElements.15" targetArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.27 //@aeg/@arcElements.30" attackExecutionGraph="//@aeg" width="150" preconditions="return (MITM->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; !DOS->Mark() &amp;&amp; (NetworkHacking->Mark() > 8));" cost="return 10;">
         <outcomes key="Success">
           <value name="Success" probability="if (NetworkHacking->Mark() > 9) return 1; else 0.9;" detection="if (NetworkHacking->Mark() > 9) return 0; else 0.1;" effects="SensitiveInformation->Mark() = true;"/>
         </outcomes>
@@ -117,7 +117,7 @@
       </value>
     </stepElements>
     <stepElements key="Block Traffic Flow">
-      <value name="Block Traffic Flow" codename="BlockTrafficFlow" xpos="750" ypos="318" sourceArcs="//@aeg/@arcElements.14" targetArcs="//@aeg/@arcElements.16 //@aeg/@arcElements.29 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DOS->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; (MITM->Mark() || Hijacking->Mark()));" cost="return 3;">
+      <value name="Block Traffic Flow" codename="BlockTrafficFlow" xpos="766" ypos="317" sourceArcs="//@aeg/@arcElements.14" targetArcs="//@aeg/@arcElements.16 //@aeg/@arcElements.29 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DOS->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; (MITM->Mark() || Hijacking->Mark()));" cost="return 3;">
         <outcomes key="Success">
           <value name="Success" probability="return 0.9;" detection="return 0.5;" effects="DOS->Mark() = true;"/>
         </outcomes>
@@ -143,10 +143,10 @@
       </value>
     </stepElements>
     <goalElements key="Sensitive Information">
-      <value name="Sensitive Information" codename="SensitiveInformation" xpos="1043" ypos="219" sourceArcs="//@aeg/@arcElements.31" targetArcs="//@aeg/@arcElements.15" attackExecutionGraph="//@aeg" width="75"/>
+      <value name="Sensitive Information" codename="SensitiveInformation" xpos="1040" ypos="224" sourceArcs="//@aeg/@arcElements.31" targetArcs="//@aeg/@arcElements.15" attackExecutionGraph="//@aeg" width="75"/>
     </goalElements>
     <goalElements key="DOS">
-      <value name="DOS" codename="DOS" xpos="1033" ypos="325" sourceArcs="//@aeg/@arcElements.30" targetArcs="//@aeg/@arcElements.14" attackExecutionGraph="//@aeg" width="75"/>
+      <value name="DOS" codename="DOS" xpos="1042" ypos="318" sourceArcs="//@aeg/@arcElements.30" targetArcs="//@aeg/@arcElements.14" attackExecutionGraph="//@aeg" width="75"/>
     </goalElements>
     <arcElements sourceName="SSL Stripping" targetName="Sensitive Information " sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Phishing" targetName="SSL Stripping" sourceType="Skill" targetType="Step"/>

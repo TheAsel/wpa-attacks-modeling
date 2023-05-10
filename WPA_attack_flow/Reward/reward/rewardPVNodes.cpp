@@ -23,8 +23,8 @@ return (0);
 
 rewardPV0::rewardPV0(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("NoKeyNoAccess",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("NoKeyNoAccess","attack_flow");
 }
@@ -63,8 +63,8 @@ return (0);
 
 rewardPV1::rewardPV1(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("SSIDandMAC",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("SSIDMACtargetnetwork","attack_flow");
 }
@@ -103,8 +103,8 @@ return (0);
 
 rewardPV2::rewardPV2(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("NetworkKey",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("NetworkKey","attack_flow");
 }
@@ -143,8 +143,8 @@ return (0);
 
 rewardPV3::rewardPV3(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("Network Access",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("NetworkAccess","attack_flow");
 }
@@ -183,8 +183,8 @@ return (0);
 
 rewardPV4::rewardPV4(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("Hijacking",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("Hijacking","attack_flow");
 }
@@ -223,8 +223,8 @@ return (0);
 
 rewardPV5::rewardPV5(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("MITM",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("MITM","attack_flow");
 }
@@ -263,8 +263,8 @@ return (0);
 
 rewardPV6::rewardPV6(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("DOS",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("DOS","attack_flow");
 }
@@ -303,8 +303,8 @@ return (0);
 
 rewardPV7::rewardPV7(int timeindex) {
   TheModelPtr = (BaseModelClass**)(&Theattack_flowADVISE);
-  double startpts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
-  double stoppts[21]={0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0};
+  double startpts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
+  double stoppts[21]={0.0, 3.0, 6.0, 9.0, 12.0, 15.0, 18.0, 21.0, 24.0, 27.0, 30.0, 33.0, 36.0, 39.0, 42.0, 45.0, 48.0, 51.0, 54.0, 57.0, 60.0};
   Initialize("Sensitive Information",(RewardType)0,21, startpts, stoppts, timeindex, 0,1, 1);
   AddVariableDependency("SensitiveInformation","attack_flow");
 }

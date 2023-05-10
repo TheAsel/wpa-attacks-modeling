@@ -1017,10 +1017,10 @@ public:
   Access *APHardware;
   Knowledge *Hijacking;
   Knowledge *MITM;
-  Knowledge *SSIDMACtargetnetwork;
-  Knowledge *NetworkAccess;
   Knowledge *NetworkKey;
+  Knowledge *SSIDMACtargetnetwork;
   Knowledge *NoKeyNoAccess;
+  Knowledge *NetworkAccess;
   Skill *PacketForging;
   Skill *SocialEngineering;
   Skill *APConfiguration;
