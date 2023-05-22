@@ -247,8 +247,8 @@ public:
 
   Knowledge *SSIDMACtargetnetwork;
   short* SSIDMACtargetnetwork_Mobius_Mark;
-  Knowledge *NoKeyNoAccess;
-  short* NoKeyNoAccess_Mobius_Mark;
+  Access *PhysicalAccess;
+  short* PhysicalAccess_Mobius_Mark;
   StepChosen *NetworkscanningChosen;
   short *NetworkscanningChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -294,7 +294,7 @@ public:
 class EvilTwinFailureStep : public Step {
 public:
 
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
@@ -302,6 +302,8 @@ public:
   short* APConfiguration_Mobius_Mark;
   Knowledge *NetworkKey;
   short* NetworkKey_Mobius_Mark;
+  Access *PhysicalAccess;
+  short* PhysicalAccess_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -347,7 +349,7 @@ public:
 class EvilTwinSuccessStep : public Step {
 public:
 
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
   Access *APHardware;
   short* APHardware_Mobius_Mark;
@@ -355,6 +357,8 @@ public:
   short* APConfiguration_Mobius_Mark;
   Knowledge *NetworkKey;
   short* NetworkKey_Mobius_Mark;
+  Access *PhysicalAccess;
+  short* PhysicalAccess_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -400,7 +404,7 @@ public:
 class JoinNetworkSuccessStep : public Step {
 public:
 
-  Knowledge *NetworkAccess;
+  Access *NetworkAccess;
   short* NetworkAccess_Mobius_Mark;
   Knowledge *NetworkKey;
   short* NetworkKey_Mobius_Mark;
@@ -457,6 +461,8 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
+  Access *PhysicalAccess;
+  short* PhysicalAccess_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -510,6 +516,8 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
+  Access *PhysicalAccess;
+  short* PhysicalAccess_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -557,12 +565,10 @@ public:
 
   Goal *DOS;
   short* DOS_Mobius_Mark;
-  Knowledge *Hijacking;
-  short* Hijacking_Mobius_Mark;
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
-  Goal *SensitiveInformation;
-  short* SensitiveInformation_Mobius_Mark;
+  Access *Hijacking;
+  short* Hijacking_Mobius_Mark;
   StepChosen *BlockTrafficFlowChosen;
   short *BlockTrafficFlowChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -610,12 +616,10 @@ public:
 
   Goal *DOS;
   short* DOS_Mobius_Mark;
-  Knowledge *Hijacking;
-  short* Hijacking_Mobius_Mark;
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
-  Goal *SensitiveInformation;
-  short* SensitiveInformation_Mobius_Mark;
+  Access *Hijacking;
+  short* Hijacking_Mobius_Mark;
   StepChosen *BlockTrafficFlowChosen;
   short *BlockTrafficFlowChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -665,7 +669,7 @@ public:
   short* SensitiveInformation_Mobius_Mark;
   Skill *NetworkHacking;
   short* NetworkHacking_Mobius_Mark;
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
   Goal *DOS;
   short* DOS_Mobius_Mark;
@@ -718,7 +722,7 @@ public:
   short* SensitiveInformation_Mobius_Mark;
   Skill *NetworkHacking;
   short* NetworkHacking_Mobius_Mark;
-  Knowledge *MITM;
+  Access *MITM;
   short* MITM_Mobius_Mark;
   Goal *DOS;
   short* DOS_Mobius_Mark;
@@ -767,12 +771,12 @@ public:
 class NetworkLayerAttackFailureStep : public Step {
 public:
 
-  Knowledge *Hijacking;
+  Access *Hijacking;
   short* Hijacking_Mobius_Mark;
-  Knowledge *NetworkAccess;
-  short* NetworkAccess_Mobius_Mark;
   Skill *PacketForging;
   short* PacketForging_Mobius_Mark;
+  Access *NetworkAccess;
+  short* NetworkAccess_Mobius_Mark;
   StepChosen *NetworkLayerAttackChosen;
   short *NetworkLayerAttackChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -818,12 +822,12 @@ public:
 class NetworkLayerAttackSuccessStep : public Step {
 public:
 
-  Knowledge *Hijacking;
+  Access *Hijacking;
   short* Hijacking_Mobius_Mark;
-  Knowledge *NetworkAccess;
-  short* NetworkAccess_Mobius_Mark;
   Skill *PacketForging;
   short* PacketForging_Mobius_Mark;
+  Access *NetworkAccess;
+  short* NetworkAccess_Mobius_Mark;
   StepChosen *NetworkLayerAttackChosen;
   short *NetworkLayerAttackChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -873,8 +877,6 @@ public:
   short* NetworkKey_Mobius_Mark;
   Skill *SocialEngineering;
   short* SocialEngineering_Mobius_Mark;
-  Knowledge *NoKeyNoAccess;
-  short* NoKeyNoAccess_Mobius_Mark;
   StepChosen *PasswordCaptureChosen;
   short *PasswordCaptureChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -924,8 +926,6 @@ public:
   short* NetworkKey_Mobius_Mark;
   Skill *SocialEngineering;
   short* SocialEngineering_Mobius_Mark;
-  Knowledge *NoKeyNoAccess;
-  short* NoKeyNoAccess_Mobius_Mark;
   StepChosen *PasswordCaptureChosen;
   short *PasswordCaptureChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -1014,13 +1014,13 @@ public:
 }; // DoNothingOutcome1Step
 
   //List of user-specified state variables
+  Access *PhysicalAccess;
+  Access *MITM;
+  Access *Hijacking;
+  Access *NetworkAccess;
   Access *APHardware;
-  Knowledge *Hijacking;
-  Knowledge *MITM;
-  Knowledge *NetworkKey;
   Knowledge *SSIDMACtargetnetwork;
-  Knowledge *NoKeyNoAccess;
-  Knowledge *NetworkAccess;
+  Knowledge *NetworkKey;
   Skill *PacketForging;
   Skill *SocialEngineering;
   Skill *APConfiguration;

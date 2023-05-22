@@ -3,7 +3,7 @@
 rewardPVModel::rewardPVModel(bool expandTimeArrays) {
   TheModel=new attack_flowADVISE();
   DefineName("rewardPVModel");
-  CreatePVList(8, expandTimeArrays);
+  CreatePVList(7, expandTimeArrays);
   Initialize();
 }
 
@@ -31,9 +31,6 @@ PerformanceVariableNode* rewardPVModel::createPVNode(int pvindex, int timeindex)
     break;
   case 6:
     return new rewardPV6(timeindex);
-    break;
-  case 7:
-    return new rewardPV7(timeindex);
     break;
   }
   return NULL;

@@ -160,26 +160,4 @@ class rewardPV6:public PerformanceVariableNode
   void CreateWorkerList(void);
 };
 
-class rewardPV7Worker:public InstantOfTime
-{
- public:
-  attack_flowADVISE *attack_flow;
-  
-  rewardPV7Worker();
-  ~rewardPV7Worker();
-  double Reward_Function();
-};
-
-class rewardPV7:public PerformanceVariableNode
-{
- public:
-  attack_flowADVISE *Theattack_flowADVISE;
-
-  rewardPV7Worker *rewardPV7WorkerList;
-
-  rewardPV7(int timeindex=0);
-  ~rewardPV7();
-  void CreateWorkerList(void);
-};
-
 #endif

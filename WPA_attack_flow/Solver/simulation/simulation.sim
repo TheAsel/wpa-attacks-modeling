@@ -28,7 +28,7 @@
 			<boolean id="MaximizeProcessorUsage">true</boolean>
 			<int id="ProcessorsPerExperiment">1</int>
 			<int id="NumMachines">1</int>
-			<string id="MachineName">PC-Vecchio</string>
+			<string id="MachineName">LAPTOP-8I337PQF</string>
 			<int id="NumGroups">0</int>
 			<string id="StudyName">study</string>
 			<boolean id="TerminatingSimulation">true</boolean>

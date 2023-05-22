@@ -123,19 +123,19 @@ attack_flowADVISE::attack_flowADVISE() {
     (BaseGroupClass*) &AdversaryDecisionGroup
   };
 
-  APHardware = new Access("APHardware", 1);
-  Hijacking = new Knowledge("Hijacking", 0);
-  MITM = new Knowledge("MITM", 0);
-  NetworkKey = new Knowledge("NetworkKey", 0);
+  PhysicalAccess = new Access("PhysicalAccess", 1);
+  MITM = new Access("MITM", 0);
+  Hijacking = new Access("Hijacking", 0);
+  NetworkAccess = new Access("NetworkAccess", 0);
+  APHardware = new Access("APHardware", 0);
   SSIDMACtargetnetwork = new Knowledge("SSIDMACtargetnetwork", 0);
-  NoKeyNoAccess = new Knowledge("NoKeyNoAccess", 1);
-  NetworkAccess = new Knowledge("NetworkAccess", 0);
+  NetworkKey = new Knowledge("NetworkKey", 0);
   PacketForging = new Skill("PacketForging", 10);
   SocialEngineering = new Skill("SocialEngineering", 10);
   APConfiguration = new Skill("APConfiguration", 10);
   NetworkHacking = new Skill("NetworkHacking", 10);
   DOS = new Goal("DOS", 0);
-  DOS->setPayoff(500);
+  DOS->setPayoff(1000);
   SensitiveInformation = new Goal("SensitiveInformation", 0);
   SensitiveInformation->setPayoff(1000);
   MakeDecision = new BeginAdversaryDecision("MakeDecision", 0);
@@ -164,13 +164,13 @@ attack_flowADVISE::attack_flowADVISE() {
   };
 
   ADVISEStateVariable* InitialSVs[32] = {
-    APHardware, // 0
-    Hijacking, // 1
-    MITM, // 2
-    NetworkKey, // 3
-    SSIDMACtargetnetwork, // 4
-    NoKeyNoAccess, // 5
-    NetworkAccess, // 6
+    PhysicalAccess, // 0
+    MITM, // 1
+    Hijacking, // 2
+    NetworkAccess, // 3
+    APHardware, // 4
+    SSIDMACtargetnetwork, // 5
+    NetworkKey, // 6
     PacketForging, // 7
     SocialEngineering, // 8
     APConfiguration, // 9
@@ -218,40 +218,40 @@ attack_flowADVISE::attack_flowADVISE() {
     {24,2}, {31,3}, {16,3}, {25,3}, {31,4}, {17,4}, {26,4}, {31,5}, 
     {18,5}, {27,5}, {31,6}, {19,6}, {28,6}, {31,7}, {20,7}, {29,7}, 
     {31,8}, {21,8}, {30,8}, {31,9}, {13,9}, {22,9}, {23,9}, {24,9}, 
-    {25,9}, {26,9}, {27,9}, {28,9}, {29,9}, {30,9}, {4,9}, {5,9}, 
+    {25,9}, {26,9}, {27,9}, {28,9}, {29,9}, {30,9}, {5,9}, {0,9}, 
     {31,10}, {14,10}, {22,10}, {23,10}, {24,10}, {25,10}, {26,10}, {27,10}, 
-    {28,10}, {29,10}, {30,10}, {2,10}, {0,10}, {3,10}, {31,11}, {14,11}, 
-    {22,11}, {23,11}, {24,11}, {25,11}, {26,11}, {27,11}, {28,11}, {29,11}, 
-    {30,11}, {2,11}, {0,11}, {3,11}, {31,12}, {15,12}, {22,12}, {23,12}, 
-    {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, {30,12}, {6,12}, 
-    {3,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, {25,13}, {26,13}, 
-    {27,13}, {28,13}, {29,13}, {30,13}, {3,13}, {4,13}, {0,13}, {31,14}, 
-    {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, {26,14}, {27,14}, {28,14}, 
-    {29,14}, {30,14}, {3,14}, {4,14}, {0,14}, {31,15}, {17,15}, {22,15}, 
-    {23,15}, {24,15}, {25,15}, {26,15}, {27,15}, {28,15}, {29,15}, {30,15}, 
-    {11,15}, {1,15}, {2,15}, {12,15}, {31,16}, {17,16}, {22,16}, {23,16}, 
-    {24,16}, {25,16}, {26,16}, {27,16}, {28,16}, {29,16}, {30,16}, {11,16}, 
-    {1,16}, {2,16}, {12,16}, {31,17}, {18,17}, {22,17}, {23,17}, {24,17}, 
-    {25,17}, {26,17}, {27,17}, {28,17}, {29,17}, {30,17}, {12,17}, {2,17}, 
-    {11,17}, {31,18}, {18,18}, {22,18}, {23,18}, {24,18}, {25,18}, {26,18}, 
-    {27,18}, {28,18}, {29,18}, {30,18}, {12,18}, {2,18}, {11,18}, {31,19}, 
-    {19,19}, {22,19}, {23,19}, {24,19}, {25,19}, {26,19}, {27,19}, {28,19}, 
-    {29,19}, {30,19}, {1,19}, {6,19}, {31,20}, {19,20}, {22,20}, {23,20}, 
-    {24,20}, {25,20}, {26,20}, {27,20}, {28,20}, {29,20}, {30,20}, {1,20}, 
-    {6,20}, {31,21}, {20,21}, {22,21}, {23,21}, {24,21}, {25,21}, {26,21}, 
-    {27,21}, {28,21}, {29,21}, {30,21}, {3,21}, {5,21}, {31,22}, {20,22}, 
-    {22,22}, {23,22}, {24,22}, {25,22}, {26,22}, {27,22}, {28,22}, {29,22}, 
-    {30,22}, {3,22}, {5,22}, {31,23}, {21,23}, {22,23}, {23,23}, {24,23}, 
+    {28,10}, {29,10}, {30,10}, {1,10}, {4,10}, {6,10}, {0,10}, {31,11}, 
+    {14,11}, {22,11}, {23,11}, {24,11}, {25,11}, {26,11}, {27,11}, {28,11}, 
+    {29,11}, {30,11}, {1,11}, {4,11}, {6,11}, {0,11}, {31,12}, {15,12}, 
+    {22,12}, {23,12}, {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, 
+    {30,12}, {3,12}, {6,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, 
+    {25,13}, {26,13}, {27,13}, {28,13}, {29,13}, {30,13}, {6,13}, {5,13}, 
+    {4,13}, {0,13}, {31,14}, {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, 
+    {26,14}, {27,14}, {28,14}, {29,14}, {30,14}, {6,14}, {5,14}, {4,14}, 
+    {0,14}, {31,15}, {17,15}, {22,15}, {23,15}, {24,15}, {25,15}, {26,15}, 
+    {27,15}, {28,15}, {29,15}, {30,15}, {11,15}, {1,15}, {2,15}, {31,16}, 
+    {17,16}, {22,16}, {23,16}, {24,16}, {25,16}, {26,16}, {27,16}, {28,16}, 
+    {29,16}, {30,16}, {11,16}, {1,16}, {2,16}, {31,17}, {18,17}, {22,17}, 
+    {23,17}, {24,17}, {25,17}, {26,17}, {27,17}, {28,17}, {29,17}, {30,17}, 
+    {12,17}, {1,17}, {11,17}, {31,18}, {18,18}, {22,18}, {23,18}, {24,18}, 
+    {25,18}, {26,18}, {27,18}, {28,18}, {29,18}, {30,18}, {12,18}, {1,18}, 
+    {11,18}, {31,19}, {19,19}, {22,19}, {23,19}, {24,19}, {25,19}, {26,19}, 
+    {27,19}, {28,19}, {29,19}, {30,19}, {2,19}, {3,19}, {31,20}, {19,20}, 
+    {22,20}, {23,20}, {24,20}, {25,20}, {26,20}, {27,20}, {28,20}, {29,20}, 
+    {30,20}, {2,20}, {3,20}, {31,21}, {20,21}, {22,21}, {23,21}, {24,21}, 
+    {25,21}, {26,21}, {27,21}, {28,21}, {29,21}, {30,21}, {6,21}, {31,22}, 
+    {20,22}, {22,22}, {23,22}, {24,22}, {25,22}, {26,22}, {27,22}, {28,22}, 
+    {29,22}, {30,22}, {6,22}, {31,23}, {21,23}, {22,23}, {23,23}, {24,23}, 
     {25,23}, {26,23}, {27,23}, {28,23}, {29,23}, {30,23}
 };
   for(int n = 0; n < 230;n++)
     AddAffectArc(InitialSVs[AffectArcs[n][0]], InitialActions[AffectArcs[n][1]]);
   int EnableArcs[38][2] = {
     {31,0}, {31,1}, {31,2}, {31,3}, {31,4}, {31,5}, {31,6}, {31,7}, 
-    {31,8}, {13,9}, {4,9}, {14,10}, {2,10}, {14,11}, {2,11}, {15,12}, 
-    {6,12}, {16,13}, {3,13}, {16,14}, {3,14}, {17,15}, {11,15}, {17,16}, 
-    {11,16}, {18,17}, {12,17}, {18,18}, {12,18}, {19,19}, {1,19}, {19,20}, 
-    {1,20}, {20,21}, {3,21}, {20,22}, {3,22}, {21,23}
+    {31,8}, {13,9}, {5,9}, {14,10}, {1,10}, {14,11}, {1,11}, {15,12}, 
+    {3,12}, {16,13}, {6,13}, {16,14}, {6,14}, {17,15}, {11,15}, {17,16}, 
+    {11,16}, {18,17}, {12,17}, {18,18}, {12,18}, {19,19}, {2,19}, {19,20}, 
+    {2,20}, {20,21}, {6,21}, {20,22}, {6,22}, {21,23}
 };
   for(int n = 0; n < 38;n++)
     AddEnableArc(InitialSVs[EnableArcs[n][0]], InitialActions[EnableArcs[n][1]]);
@@ -270,7 +270,7 @@ attack_flowADVISE::~attack_flowADVISE() {
 
 void attack_flowADVISE::assignSVsToAttackSteps() {
   NetworkscanningSuccess.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
-  NetworkscanningSuccess.NoKeyNoAccess = NoKeyNoAccess;
+  NetworkscanningSuccess.PhysicalAccess = PhysicalAccess;
   NetworkscanningSuccess.NetworkscanningChosen = NetworkscanningChosen;
   NetworkscanningSuccess.NetworkscanningWeight = NetworkscanningWeight;
   NetworkscanningSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -287,6 +287,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   EvilTwinFailure.APHardware = APHardware;
   EvilTwinFailure.APConfiguration = APConfiguration;
   EvilTwinFailure.NetworkKey = NetworkKey;
+  EvilTwinFailure.PhysicalAccess = PhysicalAccess;
   EvilTwinFailure.EvilTwinChosen = EvilTwinChosen;
   EvilTwinFailure.NetworkscanningWeight = NetworkscanningWeight;
   EvilTwinFailure.EvilTwinWeight = EvilTwinWeight;
@@ -303,6 +304,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   EvilTwinSuccess.APHardware = APHardware;
   EvilTwinSuccess.APConfiguration = APConfiguration;
   EvilTwinSuccess.NetworkKey = NetworkKey;
+  EvilTwinSuccess.PhysicalAccess = PhysicalAccess;
   EvilTwinSuccess.EvilTwinChosen = EvilTwinChosen;
   EvilTwinSuccess.NetworkscanningWeight = NetworkscanningWeight;
   EvilTwinSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -333,6 +335,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPFailure.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPFailure.APHardware = APHardware;
   RogueAPFailure.APConfiguration = APConfiguration;
+  RogueAPFailure.PhysicalAccess = PhysicalAccess;
   RogueAPFailure.RogueAPChosen = RogueAPChosen;
   RogueAPFailure.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPFailure.EvilTwinWeight = EvilTwinWeight;
@@ -349,6 +352,7 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPSuccess.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPSuccess.APHardware = APHardware;
   RogueAPSuccess.APConfiguration = APConfiguration;
+  RogueAPSuccess.PhysicalAccess = PhysicalAccess;
   RogueAPSuccess.RogueAPChosen = RogueAPChosen;
   RogueAPSuccess.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -362,9 +366,8 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPSuccess.MakeDecision = MakeDecision;
   RogueAPSuccess.setSVs(RogueAPChosen, RogueAPWeight);
   BlockTrafficFlowFailure.DOS = DOS;
-  BlockTrafficFlowFailure.Hijacking = Hijacking;
   BlockTrafficFlowFailure.MITM = MITM;
-  BlockTrafficFlowFailure.SensitiveInformation = SensitiveInformation;
+  BlockTrafficFlowFailure.Hijacking = Hijacking;
   BlockTrafficFlowFailure.BlockTrafficFlowChosen = BlockTrafficFlowChosen;
   BlockTrafficFlowFailure.NetworkscanningWeight = NetworkscanningWeight;
   BlockTrafficFlowFailure.EvilTwinWeight = EvilTwinWeight;
@@ -378,9 +381,8 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   BlockTrafficFlowFailure.MakeDecision = MakeDecision;
   BlockTrafficFlowFailure.setSVs(BlockTrafficFlowChosen, BlockTrafficFlowWeight);
   BlockTrafficFlowSuccess.DOS = DOS;
-  BlockTrafficFlowSuccess.Hijacking = Hijacking;
   BlockTrafficFlowSuccess.MITM = MITM;
-  BlockTrafficFlowSuccess.SensitiveInformation = SensitiveInformation;
+  BlockTrafficFlowSuccess.Hijacking = Hijacking;
   BlockTrafficFlowSuccess.BlockTrafficFlowChosen = BlockTrafficFlowChosen;
   BlockTrafficFlowSuccess.NetworkscanningWeight = NetworkscanningWeight;
   BlockTrafficFlowSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -426,8 +428,8 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   ApplicationLayerAttackSuccess.MakeDecision = MakeDecision;
   ApplicationLayerAttackSuccess.setSVs(ApplicationLayerAttackChosen, ApplicationLayerAttackWeight);
   NetworkLayerAttackFailure.Hijacking = Hijacking;
-  NetworkLayerAttackFailure.NetworkAccess = NetworkAccess;
   NetworkLayerAttackFailure.PacketForging = PacketForging;
+  NetworkLayerAttackFailure.NetworkAccess = NetworkAccess;
   NetworkLayerAttackFailure.NetworkLayerAttackChosen = NetworkLayerAttackChosen;
   NetworkLayerAttackFailure.NetworkscanningWeight = NetworkscanningWeight;
   NetworkLayerAttackFailure.EvilTwinWeight = EvilTwinWeight;
@@ -441,8 +443,8 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   NetworkLayerAttackFailure.MakeDecision = MakeDecision;
   NetworkLayerAttackFailure.setSVs(NetworkLayerAttackChosen, NetworkLayerAttackWeight);
   NetworkLayerAttackSuccess.Hijacking = Hijacking;
-  NetworkLayerAttackSuccess.NetworkAccess = NetworkAccess;
   NetworkLayerAttackSuccess.PacketForging = PacketForging;
+  NetworkLayerAttackSuccess.NetworkAccess = NetworkAccess;
   NetworkLayerAttackSuccess.NetworkLayerAttackChosen = NetworkLayerAttackChosen;
   NetworkLayerAttackSuccess.NetworkscanningWeight = NetworkscanningWeight;
   NetworkLayerAttackSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -457,7 +459,6 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   NetworkLayerAttackSuccess.setSVs(NetworkLayerAttackChosen, NetworkLayerAttackWeight);
   PasswordCaptureFailure.NetworkKey = NetworkKey;
   PasswordCaptureFailure.SocialEngineering = SocialEngineering;
-  PasswordCaptureFailure.NoKeyNoAccess = NoKeyNoAccess;
   PasswordCaptureFailure.PasswordCaptureChosen = PasswordCaptureChosen;
   PasswordCaptureFailure.NetworkscanningWeight = NetworkscanningWeight;
   PasswordCaptureFailure.EvilTwinWeight = EvilTwinWeight;
@@ -472,7 +473,6 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   PasswordCaptureFailure.setSVs(PasswordCaptureChosen, PasswordCaptureWeight);
   PasswordCaptureSuccess.NetworkKey = NetworkKey;
   PasswordCaptureSuccess.SocialEngineering = SocialEngineering;
-  PasswordCaptureSuccess.NoKeyNoAccess = NoKeyNoAccess;
   PasswordCaptureSuccess.PasswordCaptureChosen = PasswordCaptureChosen;
   PasswordCaptureSuccess.NetworkscanningWeight = NetworkscanningWeight;
   PasswordCaptureSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -580,7 +580,7 @@ attack_flowADVISE::NetworkscanningSuccessStep::~NetworkscanningSuccessStep() {
 
 void attack_flowADVISE::NetworkscanningSuccessStep::LinkVariables() {
   SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
-  NoKeyNoAccess->Register(&NoKeyNoAccess_Mobius_Mark);
+  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   NetworkscanningChosen->Register(&NetworkscanningChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -631,7 +631,7 @@ int attack_flowADVISE::NetworkscanningSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::NetworkscanningSuccessStep::preconditionsMet() {
-return (NoKeyNoAccess->Mark() && !(SSIDMACtargetnetwork->Mark()));
+return !(SSIDMACtargetnetwork->Mark());
   return true;
 }
 
@@ -655,7 +655,7 @@ return 0;
 
 attack_flowADVISE::EvilTwinFailureStep::EvilTwinFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("EvilTwinFailureStep", 1, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("EvilTwinFailureStep", 1, Deterministic, RaceEnabled, 16, 1, false);}
 
 attack_flowADVISE::EvilTwinFailureStep::~EvilTwinFailureStep() {
   delete[] TheDistributionParameters;
@@ -666,6 +666,7 @@ void attack_flowADVISE::EvilTwinFailureStep::LinkVariables() {
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
   NetworkKey->Register(&NetworkKey_Mobius_Mark);
+  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   EvilTwinChosen->Register(&EvilTwinChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -740,7 +741,7 @@ return 0.7;
 
 attack_flowADVISE::EvilTwinSuccessStep::EvilTwinSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("EvilTwinSuccessStep", 1, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("EvilTwinSuccessStep", 1, Deterministic, RaceEnabled, 16, 1, false);}
 
 attack_flowADVISE::EvilTwinSuccessStep::~EvilTwinSuccessStep() {
   delete[] TheDistributionParameters;
@@ -751,6 +752,7 @@ void attack_flowADVISE::EvilTwinSuccessStep::LinkVariables() {
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
   NetworkKey->Register(&NetworkKey_Mobius_Mark);
+  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   EvilTwinChosen->Register(&EvilTwinChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -908,7 +910,7 @@ return 0;
 
 attack_flowADVISE::RogueAPFailureStep::RogueAPFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("RogueAPFailureStep", 3, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("RogueAPFailureStep", 3, Deterministic, RaceEnabled, 16, 1, false);}
 
 attack_flowADVISE::RogueAPFailureStep::~RogueAPFailureStep() {
   delete[] TheDistributionParameters;
@@ -919,6 +921,7 @@ void attack_flowADVISE::RogueAPFailureStep::LinkVariables() {
   SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
+  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -993,7 +996,7 @@ return 0.5;
 
 attack_flowADVISE::RogueAPSuccessStep::RogueAPSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("RogueAPSuccessStep", 3, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("RogueAPSuccessStep", 3, Deterministic, RaceEnabled, 16, 1, false);}
 
 attack_flowADVISE::RogueAPSuccessStep::~RogueAPSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1004,6 +1007,7 @@ void attack_flowADVISE::RogueAPSuccessStep::LinkVariables() {
   SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
+  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1078,7 +1082,7 @@ return 0.1;
 
 attack_flowADVISE::BlockTrafficFlowFailureStep::BlockTrafficFlowFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("BlockTrafficFlowFailureStep", 4, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("BlockTrafficFlowFailureStep", 4, Deterministic, RaceEnabled, 14, 1, false);}
 
 attack_flowADVISE::BlockTrafficFlowFailureStep::~BlockTrafficFlowFailureStep() {
   delete[] TheDistributionParameters;
@@ -1086,9 +1090,8 @@ attack_flowADVISE::BlockTrafficFlowFailureStep::~BlockTrafficFlowFailureStep() {
 
 void attack_flowADVISE::BlockTrafficFlowFailureStep::LinkVariables() {
   DOS->Register(&DOS_Mobius_Mark);
-  Hijacking->Register(&Hijacking_Mobius_Mark);
   MITM->Register(&MITM_Mobius_Mark);
-  SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
+  Hijacking->Register(&Hijacking_Mobius_Mark);
   BlockTrafficFlowChosen->Register(&BlockTrafficFlowChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1139,7 +1142,7 @@ int attack_flowADVISE::BlockTrafficFlowFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowFailureStep::preconditionsMet() {
-return (!DOS->Mark() && !SensitiveInformation->Mark() && (MITM->Mark() || Hijacking->Mark()));
+return (!DOS->Mark() && (MITM->Mark() || Hijacking->Mark()));
   return true;
 }
 
@@ -1163,7 +1166,7 @@ return 0.1;
 
 attack_flowADVISE::BlockTrafficFlowSuccessStep::BlockTrafficFlowSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("BlockTrafficFlowSuccessStep", 4, Deterministic, RaceEnabled, 15, 1, false);}
+  commonInit("BlockTrafficFlowSuccessStep", 4, Deterministic, RaceEnabled, 14, 1, false);}
 
 attack_flowADVISE::BlockTrafficFlowSuccessStep::~BlockTrafficFlowSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1171,9 +1174,8 @@ attack_flowADVISE::BlockTrafficFlowSuccessStep::~BlockTrafficFlowSuccessStep() {
 
 void attack_flowADVISE::BlockTrafficFlowSuccessStep::LinkVariables() {
   DOS->Register(&DOS_Mobius_Mark);
-  Hijacking->Register(&Hijacking_Mobius_Mark);
   MITM->Register(&MITM_Mobius_Mark);
-  SensitiveInformation->Register(&SensitiveInformation_Mobius_Mark);
+  Hijacking->Register(&Hijacking_Mobius_Mark);
   BlockTrafficFlowChosen->Register(&BlockTrafficFlowChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1224,7 +1226,7 @@ int attack_flowADVISE::BlockTrafficFlowSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::BlockTrafficFlowSuccessStep::preconditionsMet() {
-return (!DOS->Mark() && !SensitiveInformation->Mark() && (MITM->Mark() || Hijacking->Mark()));
+return (!DOS->Mark() && (MITM->Mark() || Hijacking->Mark()));
   return true;
 }
 
@@ -1426,8 +1428,8 @@ attack_flowADVISE::NetworkLayerAttackFailureStep::~NetworkLayerAttackFailureStep
 
 void attack_flowADVISE::NetworkLayerAttackFailureStep::LinkVariables() {
   Hijacking->Register(&Hijacking_Mobius_Mark);
-  NetworkAccess->Register(&NetworkAccess_Mobius_Mark);
   PacketForging->Register(&PacketForging_Mobius_Mark);
+  NetworkAccess->Register(&NetworkAccess_Mobius_Mark);
   NetworkLayerAttackChosen->Register(&NetworkLayerAttackChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1510,8 +1512,8 @@ attack_flowADVISE::NetworkLayerAttackSuccessStep::~NetworkLayerAttackSuccessStep
 
 void attack_flowADVISE::NetworkLayerAttackSuccessStep::LinkVariables() {
   Hijacking->Register(&Hijacking_Mobius_Mark);
-  NetworkAccess->Register(&NetworkAccess_Mobius_Mark);
   PacketForging->Register(&PacketForging_Mobius_Mark);
+  NetworkAccess->Register(&NetworkAccess_Mobius_Mark);
   NetworkLayerAttackChosen->Register(&NetworkLayerAttackChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1586,7 +1588,7 @@ return 0.1;
 
 attack_flowADVISE::PasswordCaptureFailureStep::PasswordCaptureFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("PasswordCaptureFailureStep", 7, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("PasswordCaptureFailureStep", 7, Deterministic, RaceEnabled, 13, 1, false);}
 
 attack_flowADVISE::PasswordCaptureFailureStep::~PasswordCaptureFailureStep() {
   delete[] TheDistributionParameters;
@@ -1595,7 +1597,6 @@ attack_flowADVISE::PasswordCaptureFailureStep::~PasswordCaptureFailureStep() {
 void attack_flowADVISE::PasswordCaptureFailureStep::LinkVariables() {
   NetworkKey->Register(&NetworkKey_Mobius_Mark);
   SocialEngineering->Register(&SocialEngineering_Mobius_Mark);
-  NoKeyNoAccess->Register(&NoKeyNoAccess_Mobius_Mark);
   PasswordCaptureChosen->Register(&PasswordCaptureChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1646,7 +1647,7 @@ int attack_flowADVISE::PasswordCaptureFailureStep::Rank() {
 }
 
 bool attack_flowADVISE::PasswordCaptureFailureStep::preconditionsMet() {
-return (!NetworkKey->Mark() && NoKeyNoAccess->Mark() && (SocialEngineering->Mark() > 5));
+return (!NetworkKey->Mark() && (SocialEngineering->Mark() > 5));
   return true;
 }
 
@@ -1670,7 +1671,7 @@ return 0.5;
 
 attack_flowADVISE::PasswordCaptureSuccessStep::PasswordCaptureSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("PasswordCaptureSuccessStep", 7, Deterministic, RaceEnabled, 14, 1, false);}
+  commonInit("PasswordCaptureSuccessStep", 7, Deterministic, RaceEnabled, 13, 1, false);}
 
 attack_flowADVISE::PasswordCaptureSuccessStep::~PasswordCaptureSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1679,7 +1680,6 @@ attack_flowADVISE::PasswordCaptureSuccessStep::~PasswordCaptureSuccessStep() {
 void attack_flowADVISE::PasswordCaptureSuccessStep::LinkVariables() {
   NetworkKey->Register(&NetworkKey_Mobius_Mark);
   SocialEngineering->Register(&SocialEngineering_Mobius_Mark);
-  NoKeyNoAccess->Register(&NoKeyNoAccess_Mobius_Mark);
   PasswordCaptureChosen->Register(&PasswordCaptureChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -1730,7 +1730,7 @@ int attack_flowADVISE::PasswordCaptureSuccessStep::Rank() {
 }
 
 bool attack_flowADVISE::PasswordCaptureSuccessStep::preconditionsMet() {
-return (!NetworkKey->Mark() && NoKeyNoAccess->Mark() && (SocialEngineering->Mark() > 5));
+return (!NetworkKey->Mark() && (SocialEngineering->Mark() > 5));
   return true;
 }
 
