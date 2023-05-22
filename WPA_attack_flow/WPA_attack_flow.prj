@@ -12,4 +12,12 @@
   <solver key="simulation">
     <value name="simulation" category="Solver" type="Simulator"/>
   </solver>
+  <globalVariable name="apConfigProf"/>
+  <globalVariable name="networkHackingProf"/>
+  <globalVariable name="packetForgingProf"/>
+  <globalVariable name="socialEngineeringProf"/>
+  <globalVariable name="hasHardware" type="Bool"/>
+  <globalVariable name="hasPhysicalAccess" type="Bool"/>
+  <globalVariable name="wantsDOS"/>
+  <globalVariable name="wantsSensitiveInfo"/>
 </models:Project>

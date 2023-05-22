@@ -23,16 +23,16 @@
       <value name="AP Hardware" codename="APHardware" xpos="122" ypos="279" sourceArcs="//@aeg/@arcElements.13 //@aeg/@arcElements.14" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Physical Access">
-      <value name="Physical Access" codename="PhysicalAccess" xpos="-69" ypos="-58" sourceArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.22 //@aeg/@arcElements.23" attackExecutionGraph="//@aeg"/>
+      <value name="Physical Access" codename="PhysicalAccess" xpos="-69" ypos="-58" sourceArcs="//@aeg/@arcElements.21 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Network Access">
-      <value name="Network Access" codename="NetworkAccess" xpos="484" ypos="413" sourceArcs="//@aeg/@arcElements.25" targetArcs="//@aeg/@arcElements.24" attackExecutionGraph="//@aeg"/>
+      <value name="Network Access" codename="NetworkAccess" xpos="484" ypos="413" sourceArcs="//@aeg/@arcElements.24" targetArcs="//@aeg/@arcElements.23" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="MITM">
-      <value name="MITM" codename="MITM" xpos="593" ypos="281" sourceArcs="//@aeg/@arcElements.27 //@aeg/@arcElements.28" targetArcs="//@aeg/@arcElements.26" attackExecutionGraph="//@aeg"/>
+      <value name="MITM" codename="MITM" xpos="593" ypos="281" sourceArcs="//@aeg/@arcElements.26 //@aeg/@arcElements.27" targetArcs="//@aeg/@arcElements.25" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <accessElements key="Hijacking">
-      <value name="Hijacking" codename="Hijacking" xpos="813" ypos="413" sourceArcs="//@aeg/@arcElements.30" targetArcs="//@aeg/@arcElements.29" attackExecutionGraph="//@aeg"/>
+      <value name="Hijacking" codename="Hijacking" xpos="813" ypos="413" sourceArcs="//@aeg/@arcElements.29" targetArcs="//@aeg/@arcElements.28" attackExecutionGraph="//@aeg"/>
     </accessElements>
     <stepElements key="Do Nothing">
       <value name="Do Nothing" codename="DoNothing" editMask="15" attackExecutionGraph="//@aeg" height="0" width="0" cost="return 0;">
@@ -55,7 +55,7 @@
       </value>
     </stepElements>
     <stepElements key="Rogue AP">
-      <value name="Rogue AP" codename="RogueAP" xpos="-126" ypos="275" sourceArcs="//@aeg/@arcElements.17" targetArcs="//@aeg/@arcElements.6 //@aeg/@arcElements.13 //@aeg/@arcElements.15 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg" width="150" preconditions="return (!NetworkKey->Mark() &amp;&amp; SSIDMACtargetnetwork->Mark() &amp;&amp; (APHardware->Mark() == 1) &amp;&amp; (APConfiguration->Mark() > 6));" cost="return 4;">
+      <value name="Rogue AP" codename="RogueAP" xpos="-126" ypos="275" sourceArcs="//@aeg/@arcElements.17" targetArcs="//@aeg/@arcElements.6 //@aeg/@arcElements.13 //@aeg/@arcElements.15" attackExecutionGraph="//@aeg" width="150" preconditions="return (!NetworkKey->Mark() &amp;&amp; SSIDMACtargetnetwork->Mark() &amp;&amp; (APHardware->Mark() == 1) &amp;&amp; (APConfiguration->Mark() > 6));" cost="return 4;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="if (APConfiguration->Mark() > 8) return 0.8; else return 0.5;" detection="return 0.1;" effects="NetworkKey->Mark() = true;"/>
         </outcomes>
@@ -81,7 +81,7 @@
       </value>
     </stepElements>
     <stepElements key="Join Network">
-      <value name="Join Network" codename="JoinNetwork" xpos="282" ypos="412" sourceArcs="//@aeg/@arcElements.24" targetArcs="//@aeg/@arcElements.19" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkKey->Mark() &amp;&amp; !NetworkAccess->Mark());" cost="return 0;&#x9;&#x9;&#x9;">
+      <value name="Join Network" codename="JoinNetwork" xpos="282" ypos="412" sourceArcs="//@aeg/@arcElements.23" targetArcs="//@aeg/@arcElements.19" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkKey->Mark() &amp;&amp; !NetworkAccess->Mark());" cost="return 0;&#x9;&#x9;&#x9;">
         <outcomes key="Outcome 1">
           <value name="Success" probability="return 1;" detection="return 0;" effects="NetworkAccess->Mark() = true;"/>
         </outcomes>
@@ -91,7 +91,7 @@
       </value>
     </stepElements>
     <stepElements key="Evil Twin">
-      <value name="Evil Twin" codename="EvilTwin" xpos="279" ypos="282" sourceArcs="//@aeg/@arcElements.26" targetArcs="//@aeg/@arcElements.14 //@aeg/@arcElements.16 //@aeg/@arcElements.18 //@aeg/@arcElements.23" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkKey->Mark() &amp;&amp; (APHardware->Mark() == 1) &amp;&amp; (APConfiguration->Mark() > 6) &amp;&amp; !MITM->Mark()); " cost="return 6;">
+      <value name="Evil Twin" codename="EvilTwin" xpos="279" ypos="282" sourceArcs="//@aeg/@arcElements.25" targetArcs="//@aeg/@arcElements.14 //@aeg/@arcElements.16 //@aeg/@arcElements.18 //@aeg/@arcElements.22" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkKey->Mark() &amp;&amp; (APHardware->Mark() == 1) &amp;&amp; (APConfiguration->Mark() > 6) &amp;&amp; !MITM->Mark()); " cost="return 6;">
         <outcomes key="Success">
           <value name="Success" probability="if (APConfiguration->Mark() > 8) return 0.9; else return 0.3;" detection="return 0.2;" effects="MITM->Mark() = true;"/>
         </outcomes>
@@ -104,7 +104,7 @@
       </value>
     </stepElements>
     <stepElements key="Application Layer Attack">
-      <value name="Application Layer Attack" codename="ApplicationLayerAttack" xpos="761" ypos="222" sourceArcs="//@aeg/@arcElements.12" targetArcs="//@aeg/@arcElements.9 //@aeg/@arcElements.27 //@aeg/@arcElements.31" attackExecutionGraph="//@aeg" width="150" preconditions="return (MITM->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; !DOS->Mark() &amp;&amp; (NetworkHacking->Mark() > 8));" cost="return 10;">
+      <value name="Application Layer Attack" codename="ApplicationLayerAttack" xpos="761" ypos="222" sourceArcs="//@aeg/@arcElements.12" targetArcs="//@aeg/@arcElements.9 //@aeg/@arcElements.26 //@aeg/@arcElements.30" attackExecutionGraph="//@aeg" width="150" preconditions="return (MITM->Mark() &amp;&amp; !SensitiveInformation->Mark() &amp;&amp; !DOS->Mark() &amp;&amp; (NetworkHacking->Mark() > 8));" cost="return 10;">
         <outcomes key="Success">
           <value name="Success" probability="if (NetworkHacking->Mark() > 9) return 1; else 0.9;" detection="if (NetworkHacking->Mark() > 9) return 0; else 0.1;" effects="SensitiveInformation->Mark() = true;"/>
         </outcomes>
@@ -117,7 +117,7 @@
       </value>
     </stepElements>
     <stepElements key="Block Traffic Flow">
-      <value name="Block Traffic Flow" codename="BlockTrafficFlow" xpos="766" ypos="317" sourceArcs="//@aeg/@arcElements.11" targetArcs="//@aeg/@arcElements.28 //@aeg/@arcElements.30" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DOS->Mark() &amp;&amp; (MITM->Mark() || Hijacking->Mark()));" cost="return 3;">
+      <value name="Block Traffic Flow" codename="BlockTrafficFlow" xpos="766" ypos="317" sourceArcs="//@aeg/@arcElements.11" targetArcs="//@aeg/@arcElements.27 //@aeg/@arcElements.29" attackExecutionGraph="//@aeg" width="150" preconditions="return (!DOS->Mark() &amp;&amp; (MITM->Mark() || Hijacking->Mark()));" cost="return 3;">
         <outcomes key="Success">
           <value name="Success" probability="return 0.9;" detection="return 0.5;" effects="DOS->Mark() = true;"/>
         </outcomes>
@@ -130,7 +130,7 @@
       </value>
     </stepElements>
     <stepElements key="Network Layer Attack">
-      <value name="Network Layer Attack" codename="NetworkLayerAttack" xpos="580" ypos="411" sourceArcs="//@aeg/@arcElements.29" targetArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.25" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkAccess->Mark() &amp;&amp; !Hijacking->Mark() &amp;&amp; (PacketForging->Mark() > 7));" cost="return 4;">
+      <value name="Network Layer Attack" codename="NetworkLayerAttack" xpos="580" ypos="411" sourceArcs="//@aeg/@arcElements.28" targetArcs="//@aeg/@arcElements.10 //@aeg/@arcElements.24" attackExecutionGraph="//@aeg" width="150" preconditions="return (NetworkAccess->Mark() &amp;&amp; !Hijacking->Mark() &amp;&amp; (PacketForging->Mark() > 7));" cost="return 4;">
         <outcomes key="Success">
           <value name="Success" probability="if (PacketForging->Mark()>9) return 0.9; else 0.7;" detection="return 0.1;" effects="Hijacking->Mark() = true;"/>
         </outcomes>
@@ -146,7 +146,7 @@
       <value name="Sensitive Information" codename="SensitiveInformation" xpos="1040" ypos="224" targetArcs="//@aeg/@arcElements.12" attackExecutionGraph="//@aeg" width="75"/>
     </goalElements>
     <goalElements key="DOS">
-      <value name="DOS" codename="DOS" xpos="1042" ypos="318" sourceArcs="//@aeg/@arcElements.31" targetArcs="//@aeg/@arcElements.11" attackExecutionGraph="//@aeg" width="75"/>
+      <value name="DOS" codename="DOS" xpos="1042" ypos="318" sourceArcs="//@aeg/@arcElements.30" targetArcs="//@aeg/@arcElements.11" attackExecutionGraph="//@aeg" width="75"/>
     </goalElements>
     <arcElements sourceName="SSL Stripping" targetName="Sensitive Information " sourceType="Step" targetType="Goal"/>
     <arcElements sourceName="Phishing" targetName="SSL Stripping" sourceType="Skill" targetType="Step"/>
@@ -170,7 +170,6 @@
     <arcElements sourceName="NetworkKey" targetName="Join Network" sourceType="Knowledge" targetType="Step"/>
     <arcElements sourceName="Password Capture" targetName="NetworkKey" sourceType="Step" targetType="Knowledge"/>
     <arcElements sourceName="Physical Access" targetName="Network scanning" targetType="Step"/>
-    <arcElements sourceName="Physical Access" targetName="Rogue AP" targetType="Step"/>
     <arcElements sourceName="Physical Access" targetName="Evil Twin" targetType="Step"/>
     <arcElements sourceName="Join Network" targetName="Network Access" sourceType="Step"/>
     <arcElements sourceName="Network Access" targetName="Network Layer Attack" targetType="Step"/>
@@ -183,19 +182,19 @@
   </aeg>
   <adversary name="Steve" codename="Steve" horizon="5">
     <accessInit key="Network Access" value="0"/>
-    <accessInit key="Physical Access" value="1"/>
-    <accessInit key="AP Hardware" value="0"/>
+    <accessInit key="Physical Access" value="hasPhysicalAccess"/>
+    <accessInit key="AP Hardware" value="hasHardware"/>
     <accessInit key="Hijacking" value="0"/>
     <accessInit key="MITM" value="0"/>
     <goalInit key="Sensitive Information" value="0"/>
     <goalInit key="DOS" value="0"/>
-    <goalPayoff key="Sensitive Information" value="1000"/>
-    <goalPayoff key="DOS" value="1000"/>
+    <goalPayoff key="Sensitive Information" value="wantsSensitiveInfo"/>
+    <goalPayoff key="DOS" value="wantsDOS"/>
     <knowledgeInit key="SSID &amp; MAC target network" value="0"/>
     <knowledgeInit key="NetworkKey" value="0"/>
-    <skillInit key="Packet Forging" value="10"/>
-    <skillInit key="AP Configuration" value="10"/>
-    <skillInit key="Network Hacking" value="10"/>
-    <skillInit key="Social Engineering" value="10"/>
+    <skillInit key="Packet Forging" value="packetForgingProf"/>
+    <skillInit key="AP Configuration" value="apConfigProf"/>
+    <skillInit key="Network Hacking" value="networkHackingProf"/>
+    <skillInit key="Social Engineering" value="socialEngineeringProf"/>
   </adversary>
 </models:AdviseAtomicModel>

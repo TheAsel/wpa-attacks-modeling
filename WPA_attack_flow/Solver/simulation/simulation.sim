@@ -26,9 +26,9 @@
 			<string id="Runname">Results</string>
 			<int id="DisplayUpdateFrequency">1000</int>
 			<boolean id="MaximizeProcessorUsage">true</boolean>
-			<int id="ProcessorsPerExperiment">1</int>
+			<int id="ProcessorsPerExperiment">4</int>
 			<int id="NumMachines">1</int>
-			<string id="MachineName">LAPTOP-8I337PQF</string>
+			<string id="MachineName">PC-Antonio</string>
 			<int id="NumGroups">0</int>
 			<string id="StudyName">study</string>
 			<boolean id="TerminatingSimulation">true</boolean>

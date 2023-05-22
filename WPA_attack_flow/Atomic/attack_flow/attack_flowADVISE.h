@@ -17,6 +17,14 @@
 #include "Cpp/BaseClasses/atomic/advise/StepWeight.h"
 #include <limits.h>
 #include <cmath>
+extern Short apConfigProf;
+extern Short networkHackingProf;
+extern Short packetForgingProf;
+extern Short socialEngineeringProf;
+extern Bool hasHardware;
+extern Bool hasPhysicalAccess;
+extern Short wantsDOS;
+extern Short wantsSensitiveInfo;
 extern UserDistributions* TheDistribution;
 
 /*********************************************************************
@@ -461,8 +469,6 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Access *PhysicalAccess;
-  short* PhysicalAccess_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -516,8 +522,6 @@ public:
   short* APHardware_Mobius_Mark;
   Skill *APConfiguration;
   short* APConfiguration_Mobius_Mark;
-  Access *PhysicalAccess;
-  short* PhysicalAccess_Mobius_Mark;
   StepChosen *RogueAPChosen;
   short *RogueAPChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;

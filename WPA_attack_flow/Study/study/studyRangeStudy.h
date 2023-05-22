@@ -7,6 +7,14 @@
 #include "Cpp/BaseClasses/GlobalVariables.h"
 #include "Cpp/Study/BaseStudyClass.hpp"
 
+extern Short apConfigProf;
+extern Bool hasHardware;
+extern Bool hasPhysicalAccess;
+extern Short networkHackingProf;
+extern Short packetForgingProf;
+extern Short socialEngineeringProf;
+extern Short wantsDOS;
+extern Short wantsSensitiveInfo;
 
 class studyRangeStudy : public BaseStudyClass {
 public:
@@ -16,7 +24,23 @@ studyRangeStudy();
 
 private:
 
+short *apConfigProfValues;
+bool *hasHardwareValues;
+bool *hasPhysicalAccessValues;
+short *networkHackingProfValues;
+short *packetForgingProfValues;
+short *socialEngineeringProfValues;
+short *wantsDOSValues;
+short *wantsSensitiveInfoValues;
 
+void SetValues_apConfigProf();
+void SetValues_hasHardware();
+void SetValues_hasPhysicalAccess();
+void SetValues_networkHackingProf();
+void SetValues_packetForgingProf();
+void SetValues_socialEngineeringProf();
+void SetValues_wantsDOS();
+void SetValues_wantsSensitiveInfo();
 
 void PrintGlobalValues(int);
 void *GetGVValue(char *TheGVName);

@@ -123,21 +123,21 @@ attack_flowADVISE::attack_flowADVISE() {
     (BaseGroupClass*) &AdversaryDecisionGroup
   };
 
-  PhysicalAccess = new Access("PhysicalAccess", 1);
+  PhysicalAccess = new Access("PhysicalAccess", hasPhysicalAccess);
   MITM = new Access("MITM", 0);
   Hijacking = new Access("Hijacking", 0);
   NetworkAccess = new Access("NetworkAccess", 0);
-  APHardware = new Access("APHardware", 0);
+  APHardware = new Access("APHardware", hasHardware);
   SSIDMACtargetnetwork = new Knowledge("SSIDMACtargetnetwork", 0);
   NetworkKey = new Knowledge("NetworkKey", 0);
-  PacketForging = new Skill("PacketForging", 10);
-  SocialEngineering = new Skill("SocialEngineering", 10);
-  APConfiguration = new Skill("APConfiguration", 10);
-  NetworkHacking = new Skill("NetworkHacking", 10);
+  PacketForging = new Skill("PacketForging", packetForgingProf);
+  SocialEngineering = new Skill("SocialEngineering", socialEngineeringProf);
+  APConfiguration = new Skill("APConfiguration", apConfigProf);
+  NetworkHacking = new Skill("NetworkHacking", networkHackingProf);
   DOS = new Goal("DOS", 0);
-  DOS->setPayoff(1000);
+  DOS->setPayoff(wantsDOS);
   SensitiveInformation = new Goal("SensitiveInformation", 0);
-  SensitiveInformation->setPayoff(1000);
+  SensitiveInformation->setPayoff(wantsSensitiveInfo);
   MakeDecision = new BeginAdversaryDecision("MakeDecision", 0);
   NetworkscanningWeight = new StepWeight("NetworkscanningWeight", 0);
   NetworkscanningChosen = new StepChosen("NetworkscanningChosen", 0);
@@ -213,7 +213,7 @@ attack_flowADVISE::attack_flowADVISE() {
 
   assignSVsToAttackSteps();
 
-  int AffectArcs[230][2] = {
+  int AffectArcs[228][2] = {
     {31,0}, {13,0}, {22,0}, {31,1}, {14,1}, {23,1}, {31,2}, {15,2}, 
     {24,2}, {31,3}, {16,3}, {25,3}, {31,4}, {17,4}, {26,4}, {31,5}, 
     {18,5}, {27,5}, {31,6}, {19,6}, {28,6}, {31,7}, {20,7}, {29,7}, 
@@ -226,25 +226,25 @@ attack_flowADVISE::attack_flowADVISE() {
     {22,12}, {23,12}, {24,12}, {25,12}, {26,12}, {27,12}, {28,12}, {29,12}, 
     {30,12}, {3,12}, {6,12}, {31,13}, {16,13}, {22,13}, {23,13}, {24,13}, 
     {25,13}, {26,13}, {27,13}, {28,13}, {29,13}, {30,13}, {6,13}, {5,13}, 
-    {4,13}, {0,13}, {31,14}, {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, 
-    {26,14}, {27,14}, {28,14}, {29,14}, {30,14}, {6,14}, {5,14}, {4,14}, 
-    {0,14}, {31,15}, {17,15}, {22,15}, {23,15}, {24,15}, {25,15}, {26,15}, 
-    {27,15}, {28,15}, {29,15}, {30,15}, {11,15}, {1,15}, {2,15}, {31,16}, 
-    {17,16}, {22,16}, {23,16}, {24,16}, {25,16}, {26,16}, {27,16}, {28,16}, 
-    {29,16}, {30,16}, {11,16}, {1,16}, {2,16}, {31,17}, {18,17}, {22,17}, 
-    {23,17}, {24,17}, {25,17}, {26,17}, {27,17}, {28,17}, {29,17}, {30,17}, 
-    {12,17}, {1,17}, {11,17}, {31,18}, {18,18}, {22,18}, {23,18}, {24,18}, 
-    {25,18}, {26,18}, {27,18}, {28,18}, {29,18}, {30,18}, {12,18}, {1,18}, 
-    {11,18}, {31,19}, {19,19}, {22,19}, {23,19}, {24,19}, {25,19}, {26,19}, 
-    {27,19}, {28,19}, {29,19}, {30,19}, {2,19}, {3,19}, {31,20}, {19,20}, 
-    {22,20}, {23,20}, {24,20}, {25,20}, {26,20}, {27,20}, {28,20}, {29,20}, 
-    {30,20}, {2,20}, {3,20}, {31,21}, {20,21}, {22,21}, {23,21}, {24,21}, 
-    {25,21}, {26,21}, {27,21}, {28,21}, {29,21}, {30,21}, {6,21}, {31,22}, 
-    {20,22}, {22,22}, {23,22}, {24,22}, {25,22}, {26,22}, {27,22}, {28,22}, 
-    {29,22}, {30,22}, {6,22}, {31,23}, {21,23}, {22,23}, {23,23}, {24,23}, 
-    {25,23}, {26,23}, {27,23}, {28,23}, {29,23}, {30,23}
+    {4,13}, {31,14}, {16,14}, {22,14}, {23,14}, {24,14}, {25,14}, {26,14}, 
+    {27,14}, {28,14}, {29,14}, {30,14}, {6,14}, {5,14}, {4,14}, {31,15}, 
+    {17,15}, {22,15}, {23,15}, {24,15}, {25,15}, {26,15}, {27,15}, {28,15}, 
+    {29,15}, {30,15}, {11,15}, {1,15}, {2,15}, {31,16}, {17,16}, {22,16}, 
+    {23,16}, {24,16}, {25,16}, {26,16}, {27,16}, {28,16}, {29,16}, {30,16}, 
+    {11,16}, {1,16}, {2,16}, {31,17}, {18,17}, {22,17}, {23,17}, {24,17}, 
+    {25,17}, {26,17}, {27,17}, {28,17}, {29,17}, {30,17}, {12,17}, {1,17}, 
+    {11,17}, {31,18}, {18,18}, {22,18}, {23,18}, {24,18}, {25,18}, {26,18}, 
+    {27,18}, {28,18}, {29,18}, {30,18}, {12,18}, {1,18}, {11,18}, {31,19}, 
+    {19,19}, {22,19}, {23,19}, {24,19}, {25,19}, {26,19}, {27,19}, {28,19}, 
+    {29,19}, {30,19}, {2,19}, {3,19}, {31,20}, {19,20}, {22,20}, {23,20}, 
+    {24,20}, {25,20}, {26,20}, {27,20}, {28,20}, {29,20}, {30,20}, {2,20}, 
+    {3,20}, {31,21}, {20,21}, {22,21}, {23,21}, {24,21}, {25,21}, {26,21}, 
+    {27,21}, {28,21}, {29,21}, {30,21}, {6,21}, {31,22}, {20,22}, {22,22}, 
+    {23,22}, {24,22}, {25,22}, {26,22}, {27,22}, {28,22}, {29,22}, {30,22}, 
+    {6,22}, {31,23}, {21,23}, {22,23}, {23,23}, {24,23}, {25,23}, {26,23}, 
+    {27,23}, {28,23}, {29,23}, {30,23}
 };
-  for(int n = 0; n < 230;n++)
+  for(int n = 0; n < 228;n++)
     AddAffectArc(InitialSVs[AffectArcs[n][0]], InitialActions[AffectArcs[n][1]]);
   int EnableArcs[38][2] = {
     {31,0}, {31,1}, {31,2}, {31,3}, {31,4}, {31,5}, {31,6}, {31,7}, 
@@ -335,7 +335,6 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPFailure.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPFailure.APHardware = APHardware;
   RogueAPFailure.APConfiguration = APConfiguration;
-  RogueAPFailure.PhysicalAccess = PhysicalAccess;
   RogueAPFailure.RogueAPChosen = RogueAPChosen;
   RogueAPFailure.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPFailure.EvilTwinWeight = EvilTwinWeight;
@@ -352,7 +351,6 @@ void attack_flowADVISE::assignSVsToAttackSteps() {
   RogueAPSuccess.SSIDMACtargetnetwork = SSIDMACtargetnetwork;
   RogueAPSuccess.APHardware = APHardware;
   RogueAPSuccess.APConfiguration = APConfiguration;
-  RogueAPSuccess.PhysicalAccess = PhysicalAccess;
   RogueAPSuccess.RogueAPChosen = RogueAPChosen;
   RogueAPSuccess.NetworkscanningWeight = NetworkscanningWeight;
   RogueAPSuccess.EvilTwinWeight = EvilTwinWeight;
@@ -910,7 +908,7 @@ return 0;
 
 attack_flowADVISE::RogueAPFailureStep::RogueAPFailureStep() {
   TheDistributionParameters = new double[1];
-  commonInit("RogueAPFailureStep", 3, Deterministic, RaceEnabled, 16, 1, false);}
+  commonInit("RogueAPFailureStep", 3, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::RogueAPFailureStep::~RogueAPFailureStep() {
   delete[] TheDistributionParameters;
@@ -921,7 +919,6 @@ void attack_flowADVISE::RogueAPFailureStep::LinkVariables() {
   SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
@@ -996,7 +993,7 @@ return 0.5;
 
 attack_flowADVISE::RogueAPSuccessStep::RogueAPSuccessStep() {
   TheDistributionParameters = new double[1];
-  commonInit("RogueAPSuccessStep", 3, Deterministic, RaceEnabled, 16, 1, false);}
+  commonInit("RogueAPSuccessStep", 3, Deterministic, RaceEnabled, 15, 1, false);}
 
 attack_flowADVISE::RogueAPSuccessStep::~RogueAPSuccessStep() {
   delete[] TheDistributionParameters;
@@ -1007,7 +1004,6 @@ void attack_flowADVISE::RogueAPSuccessStep::LinkVariables() {
   SSIDMACtargetnetwork->Register(&SSIDMACtargetnetwork_Mobius_Mark);
   APHardware->Register(&APHardware_Mobius_Mark);
   APConfiguration->Register(&APConfiguration_Mobius_Mark);
-  PhysicalAccess->Register(&PhysicalAccess_Mobius_Mark);
   RogueAPChosen->Register(&RogueAPChosen_Mobius_Mark);
   NetworkscanningWeight->Register(&NetworkscanningWeight_Mobius_Mark);
   EvilTwinWeight->Register(&EvilTwinWeight_Mobius_Mark);
