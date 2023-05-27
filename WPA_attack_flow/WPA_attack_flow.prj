@@ -17,7 +17,6 @@
   <globalVariable name="packetForgingProf"/>
   <globalVariable name="socialEngineeringProf"/>
   <globalVariable name="hasHardware" type="Bool"/>
-  <globalVariable name="hasPhysicalAccess" type="Bool"/>
   <globalVariable name="wantsDOS"/>
   <globalVariable name="wantsSensitiveInfo"/>
 </models:Project>

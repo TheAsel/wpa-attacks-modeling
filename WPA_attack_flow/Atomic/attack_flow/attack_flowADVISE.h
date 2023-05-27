@@ -22,7 +22,6 @@ extern Short networkHackingProf;
 extern Short packetForgingProf;
 extern Short socialEngineeringProf;
 extern Bool hasHardware;
-extern Bool hasPhysicalAccess;
 extern Short wantsDOS;
 extern Short wantsSensitiveInfo;
 extern UserDistributions* TheDistribution;
@@ -255,8 +254,6 @@ public:
 
   Knowledge *SSIDMACtargetnetwork;
   short* SSIDMACtargetnetwork_Mobius_Mark;
-  Access *PhysicalAccess;
-  short* PhysicalAccess_Mobius_Mark;
   StepChosen *NetworkscanningChosen;
   short *NetworkscanningChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -310,8 +307,6 @@ public:
   short* APConfiguration_Mobius_Mark;
   Knowledge *NetworkKey;
   short* NetworkKey_Mobius_Mark;
-  Access *PhysicalAccess;
-  short* PhysicalAccess_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -365,8 +360,6 @@ public:
   short* APConfiguration_Mobius_Mark;
   Knowledge *NetworkKey;
   short* NetworkKey_Mobius_Mark;
-  Access *PhysicalAccess;
-  short* PhysicalAccess_Mobius_Mark;
   StepChosen *EvilTwinChosen;
   short *EvilTwinChosen_Mobius_Mark;
   StepWeight *NetworkscanningWeight;
@@ -1018,11 +1011,10 @@ public:
 }; // DoNothingOutcome1Step
 
   //List of user-specified state variables
-  Access *PhysicalAccess;
   Access *MITM;
+  Access *APHardware;
   Access *Hijacking;
   Access *NetworkAccess;
-  Access *APHardware;
   Knowledge *SSIDMACtargetnetwork;
   Knowledge *NetworkKey;
   Skill *PacketForging;
