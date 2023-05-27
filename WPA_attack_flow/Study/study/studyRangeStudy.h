@@ -9,7 +9,6 @@
 
 extern Short apConfigProf;
 extern Bool hasHardware;
-extern Bool hasPhysicalAccess;
 extern Short networkHackingProf;
 extern Short packetForgingProf;
 extern Short socialEngineeringProf;
@@ -26,7 +25,6 @@ private:
 
 short *apConfigProfValues;
 bool *hasHardwareValues;
-bool *hasPhysicalAccessValues;
 short *networkHackingProfValues;
 short *packetForgingProfValues;
 short *socialEngineeringProfValues;
@@ -35,7 +33,6 @@ short *wantsSensitiveInfoValues;
 
 void SetValues_apConfigProf();
 void SetValues_hasHardware();
-void SetValues_hasPhysicalAccess();
 void SetValues_networkHackingProf();
 void SetValues_packetForgingProf();
 void SetValues_socialEngineeringProf();
