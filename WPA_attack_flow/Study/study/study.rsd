@@ -29,8 +29,8 @@
 						<boolean id="DisplayToolTips">true</boolean>
 					</class>
 					<string id="FullPath">
-						C:\\Users\\theas\\Documents\\GitHub\\wpa-attacks-modeling\\\
-						\WPA_attack_flow\\Study\\study\\
+						C:\\Users\\theas\\Documents\\GitHub\\wpa-attacks-modeling\\W
+						PA_attack_flow\\Study\\study\\
 					</string>
 					<string id="PVModelName">reward</string>
 					<vector id="ActiveExpVector">
@@ -93,7 +93,7 @@
 						<boolean id="56">true</boolean>
 						<boolean id="57">false</boolean>
 						<boolean id="58">false</boolean>
-						<boolean id="59">false</boolean>
+						<boolean id="59">true</boolean>
 						<boolean id="60">false</boolean>
 						<boolean id="61">false</boolean>
 						<boolean id="62">false</boolean>

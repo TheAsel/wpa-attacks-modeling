@@ -1,5 +1,5 @@
 Simulator Results
-Date:, Sat May 27 11:20:17 CEST 2023
+Date:, Sun May 28 15:42:34 CEST 2023
 
 Simulator Configuration
 Simulation Type:,Terminating
@@ -23,10 +23,10 @@ Processors Selected for Simulation:
 PC-Antonio,amd64
 
 Experiment 36
-Experiment 36,Start Time:,Sat May 27 11:20:13 CEST 2023
-Experiment 36,Finish Time:,Sat May 27 11:20:14 CEST 2023
-Experiment 36,Elapsed Running Time:,0.71
-Experiment 36,Total CPU Time:,0.066
+Experiment 36,Start Time:,Sun May 28 15:42:30 CEST 2023
+Experiment 36,Finish Time:,Sun May 28 15:42:30 CEST 2023
+Experiment 36,Elapsed Running Time:,0.355
+Experiment 36,Total CPU Time:,0.07
 Experiment 36,Batches Completed:,1000
 Experiment 36,Experiment Name:,Experiment 36
 Experiment 36,Global Variable Settings:
@@ -188,10 +188,10 @@ Experiment 36,Mean,Sensitive Information,57.0,57.0,0,0000000000E00 ,+/-,0,000000
 Experiment 36,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
 
 Experiment 56
-Experiment 56,Start Time:,Sat May 27 11:20:14 CEST 2023
-Experiment 56,Finish Time:,Sat May 27 11:20:15 CEST 2023
-Experiment 56,Elapsed Running Time:,0.708
-Experiment 56,Total CPU Time:,0.072
+Experiment 56,Start Time:,Sun May 28 15:42:30 CEST 2023
+Experiment 56,Finish Time:,Sun May 28 15:42:30 CEST 2023
+Experiment 56,Elapsed Running Time:,0.377
+Experiment 56,Total CPU Time:,0.076
 Experiment 56,Batches Completed:,1000
 Experiment 56,Experiment Name:,Experiment 56
 Experiment 56,Global Variable Settings:
@@ -353,10 +353,10 @@ Experiment 56,Mean,Sensitive Information,57.0,57.0,0,0000000000E00 ,+/-,0,000000
 Experiment 56,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
 
 Experiment 57
-Experiment 57,Start Time:,Sat May 27 11:20:15 CEST 2023
-Experiment 57,Finish Time:,Sat May 27 11:20:15 CEST 2023
-Experiment 57,Elapsed Running Time:,0.329
-Experiment 57,Total CPU Time:,0.072
+Experiment 57,Start Time:,Sun May 28 15:42:30 CEST 2023
+Experiment 57,Finish Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 57,Elapsed Running Time:,0.312
+Experiment 57,Total CPU Time:,0.069
 Experiment 57,Batches Completed:,1000
 Experiment 57,Experiment Name:,Experiment 57
 Experiment 57,Global Variable Settings:
@@ -376,16 +376,16 @@ Experiment 57,Mean,SSIDandMAC,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00
 Experiment 57,Mean,SSIDandMAC,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,SSIDandMAC,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,SSIDandMAC,18.0,18.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 57,Mean,SSIDandMAC,21.0,21.0,8,2800000000E-01,+/-,2,3401986210E-02
-Experiment 57,Mean,SSIDandMAC,24.0,24.0,8,8800000000E-01,+/-,1,9556395942E-02
-Experiment 57,Mean,SSIDandMAC,27.0,27.0,8,9700000000E-01,+/-,1,8848993346E-02
-Experiment 57,Mean,SSIDandMAC,30.0,30.0,9,7900000000E-01,+/-,8,8914854166E-03
-Experiment 57,Mean,SSIDandMAC,33.0,33.0,9,8600000000E-01,+/-,7,2857757946E-03
-Experiment 57,Mean,SSIDandMAC,36.0,36.0,9,8700000000E-01,+/-,7,0243085432E-03
-Experiment 57,Mean,SSIDandMAC,39.0,39.0,9,9700000000E-01,+/-,3,3914196625E-03
-Experiment 57,Mean,SSIDandMAC,42.0,42.0,9,9700000000E-01,+/-,3,3914196625E-03
-Experiment 57,Mean,SSIDandMAC,45.0,45.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,SSIDandMAC,48.0,48.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,SSIDandMAC,21.0,21.0,7,9200000000E-01,+/-,2,5169094161E-02
+Experiment 57,Mean,SSIDandMAC,24.0,24.0,8,7600000000E-01,+/-,2,0437897790E-02
+Experiment 57,Mean,SSIDandMAC,27.0,27.0,8,8700000000E-01,+/-,1,9632443619E-02
+Experiment 57,Mean,SSIDandMAC,30.0,30.0,9,5700000000E-01,+/-,1,2579504184E-02
+Experiment 57,Mean,SSIDandMAC,33.0,33.0,9,8100000000E-01,+/-,8,4661241225E-03
+Experiment 57,Mean,SSIDandMAC,36.0,36.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 57,Mean,SSIDandMAC,39.0,39.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,SSIDandMAC,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,SSIDandMAC,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,SSIDandMAC,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,SSIDandMAC,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,SSIDandMAC,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,SSIDandMAC,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
@@ -394,16 +394,16 @@ Experiment 57,Mean,NetworkKey,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00
 Experiment 57,Mean,NetworkKey,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,NetworkKey,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,NetworkKey,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 57,Mean,NetworkKey,12.0,12.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,NetworkKey,15.0,15.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,NetworkKey,18.0,18.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,NetworkKey,21.0,21.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,NetworkKey,24.0,24.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,NetworkKey,27.0,27.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,NetworkKey,30.0,30.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,NetworkKey,33.0,33.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,NetworkKey,36.0,36.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,NetworkKey,39.0,39.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,NetworkKey,12.0,12.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,NetworkKey,15.0,15.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,NetworkKey,18.0,18.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,NetworkKey,21.0,21.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,NetworkKey,24.0,24.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,NetworkKey,27.0,27.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,NetworkKey,30.0,30.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,NetworkKey,33.0,33.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,NetworkKey,36.0,36.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,NetworkKey,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,NetworkKey,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,NetworkKey,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,NetworkKey,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
@@ -415,16 +415,16 @@ Experiment 57,Mean,Network Access,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00
 Experiment 57,Mean,Network Access,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Network Access,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Network Access,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 57,Mean,Network Access,12.0,12.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,Network Access,15.0,15.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,Network Access,18.0,18.0,9,0000000000E-01,+/-,1,8603496717E-02
-Experiment 57,Mean,Network Access,21.0,21.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,Network Access,24.0,24.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,Network Access,27.0,27.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,Network Access,30.0,30.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,Network Access,33.0,33.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,Network Access,36.0,36.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,Network Access,39.0,39.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,Network Access,12.0,12.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,Network Access,15.0,15.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,Network Access,18.0,18.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,Network Access,21.0,21.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,Network Access,24.0,24.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,Network Access,27.0,27.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,Network Access,30.0,30.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 57,Mean,Network Access,33.0,33.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,Network Access,36.0,36.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,Network Access,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Network Access,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Network Access,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Network Access,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
@@ -437,16 +437,16 @@ Experiment 57,Mean,Hijacking,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00
 Experiment 57,Mean,Hijacking,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Hijacking,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Hijacking,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 57,Mean,Hijacking,15.0,15.0,8,3000000000E-01,+/-,2,3293611836E-02
-Experiment 57,Mean,Hijacking,18.0,18.0,8,3000000000E-01,+/-,2,3293611836E-02
-Experiment 57,Mean,Hijacking,21.0,21.0,8,9100000000E-01,+/-,1,9325263678E-02
-Experiment 57,Mean,Hijacking,24.0,24.0,8,9800000000E-01,+/-,1,8767722851E-02
-Experiment 57,Mean,Hijacking,27.0,27.0,9,8500000000E-01,+/-,7,5376691660E-03
-Experiment 57,Mean,Hijacking,30.0,30.0,9,8700000000E-01,+/-,7,0243085432E-03
-Experiment 57,Mean,Hijacking,33.0,33.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,Hijacking,36.0,36.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,Hijacking,39.0,39.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,Hijacking,42.0,42.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,Hijacking,15.0,15.0,8,0100000000E-01,+/-,2,4758032203E-02
+Experiment 57,Mean,Hijacking,18.0,18.0,8,0100000000E-01,+/-,2,4758032203E-02
+Experiment 57,Mean,Hijacking,21.0,21.0,8,8300000000E-01,+/-,1,9931804093E-02
+Experiment 57,Mean,Hijacking,24.0,24.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 57,Mean,Hijacking,27.0,27.0,9,6700000000E-01,+/-,1,1077545288E-02
+Experiment 57,Mean,Hijacking,30.0,30.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 57,Mean,Hijacking,33.0,33.0,9,8600000000E-01,+/-,7,2857757946E-03
+Experiment 57,Mean,Hijacking,36.0,36.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 57,Mean,Hijacking,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,Hijacking,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Hijacking,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Hijacking,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Hijacking,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
@@ -480,16 +480,16 @@ Experiment 57,Mean,DOS,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00
 Experiment 57,Mean,DOS,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,DOS,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,DOS,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
-Experiment 57,Mean,DOS,18.0,18.0,7,5900000000E-01,+/-,2,6521784168E-02
-Experiment 57,Mean,DOS,21.0,21.0,8,8800000000E-01,+/-,1,9556395942E-02
-Experiment 57,Mean,DOS,24.0,24.0,8,9100000000E-01,+/-,1,9325263678E-02
-Experiment 57,Mean,DOS,27.0,27.0,9,7900000000E-01,+/-,8,8914854166E-03
-Experiment 57,Mean,DOS,30.0,30.0,9,8400000000E-01,+/-,7,7809185250E-03
-Experiment 57,Mean,DOS,33.0,33.0,9,8700000000E-01,+/-,7,0243085432E-03
-Experiment 57,Mean,DOS,36.0,36.0,9,8900000000E-01,+/-,6,4679673006E-03
-Experiment 57,Mean,DOS,39.0,39.0,9,9700000000E-01,+/-,3,3914196625E-03
-Experiment 57,Mean,DOS,42.0,42.0,9,9800000000E-01,+/-,2,7704709183E-03
-Experiment 57,Mean,DOS,45.0,45.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 57,Mean,DOS,18.0,18.0,7,2200000000E-01,+/-,2,7782052265E-02
+Experiment 57,Mean,DOS,21.0,21.0,8,7600000000E-01,+/-,2,0437897790E-02
+Experiment 57,Mean,DOS,24.0,24.0,8,8300000000E-01,+/-,1,9931804093E-02
+Experiment 57,Mean,DOS,27.0,27.0,9,5700000000E-01,+/-,1,2579504184E-02
+Experiment 57,Mean,DOS,30.0,30.0,9,6700000000E-01,+/-,1,1077545288E-02
+Experiment 57,Mean,DOS,33.0,33.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 57,Mean,DOS,36.0,36.0,9,8600000000E-01,+/-,7,2857757946E-03
+Experiment 57,Mean,DOS,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,DOS,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 57,Mean,DOS,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,DOS,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,DOS,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,DOS,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
@@ -517,11 +517,176 @@ Experiment 57,Mean,Sensitive Information,54.0,54.0,0,0000000000E00 ,+/-,0,000000
 Experiment 57,Mean,Sensitive Information,57.0,57.0,0,0000000000E00 ,+/-,0,0000000000E00 
 Experiment 57,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
 
+Experiment 60
+Experiment 60,Start Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 60,Finish Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 60,Elapsed Running Time:,0.595
+Experiment 60,Total CPU Time:,0.082
+Experiment 60,Batches Completed:,1000
+Experiment 60,Experiment Name:,Experiment 60
+Experiment 60,Global Variable Settings:
+Experiment 60,short,apConfigProf,10
+Experiment 60,bool,hasHardware,1
+Experiment 60,short,networkHackingProf,0
+Experiment 60,short,packetForgingProf,10
+Experiment 60,short,socialEngineeringProf,10
+Experiment 60,short,wantsDOS,1000
+Experiment 60,short,wantsSensitiveInfo,200
+Experiment 60, Results
+Experiment 60,Result Type,Name,Start Time,End Time,Mean,,Confidence Interval,Failed To Converge
+Experiment 60,Mean,SSIDandMAC,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,18.0,18.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,21.0,21.0,7,9200000000E-01,+/-,2,5169094161E-02
+Experiment 60,Mean,SSIDandMAC,24.0,24.0,8,7600000000E-01,+/-,2,0437897790E-02
+Experiment 60,Mean,SSIDandMAC,27.0,27.0,8,8700000000E-01,+/-,1,9632443619E-02
+Experiment 60,Mean,SSIDandMAC,30.0,30.0,9,5700000000E-01,+/-,1,2579504184E-02
+Experiment 60,Mean,SSIDandMAC,33.0,33.0,9,8100000000E-01,+/-,8,4661241225E-03
+Experiment 60,Mean,SSIDandMAC,36.0,36.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 60,Mean,SSIDandMAC,39.0,39.0,9,9800000000E-01,+/-,2,7704709183E-03
+Experiment 60,Mean,SSIDandMAC,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,SSIDandMAC,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,12.0,12.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,NetworkKey,15.0,15.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,NetworkKey,18.0,18.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,NetworkKey,21.0,21.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,NetworkKey,24.0,24.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,NetworkKey,27.0,27.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,NetworkKey,30.0,30.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,33.0,33.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,36.0,36.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,NetworkKey,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,12.0,12.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,Network Access,15.0,15.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,Network Access,18.0,18.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,Network Access,21.0,21.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,Network Access,24.0,24.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,Network Access,27.0,27.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,Network Access,30.0,30.0,9,8700000000E-01,+/-,7,0243085432E-03
+Experiment 60,Mean,Network Access,33.0,33.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,36.0,36.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Network Access,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,15.0,15.0,8,0100000000E-01,+/-,2,4758032203E-02
+Experiment 60,Mean,Hijacking,18.0,18.0,8,0100000000E-01,+/-,2,4758032203E-02
+Experiment 60,Mean,Hijacking,21.0,21.0,8,8300000000E-01,+/-,1,9931804093E-02
+Experiment 60,Mean,Hijacking,24.0,24.0,8,8900000000E-01,+/-,1,9479853981E-02
+Experiment 60,Mean,Hijacking,27.0,27.0,9,6700000000E-01,+/-,1,1077545288E-02
+Experiment 60,Mean,Hijacking,30.0,30.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 60,Mean,Hijacking,33.0,33.0,9,8600000000E-01,+/-,7,2857757946E-03
+Experiment 60,Mean,Hijacking,36.0,36.0,9,9900000000E-01,+/-,1,9600000000E-03
+Experiment 60,Mean,Hijacking,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Hijacking,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,18.0,18.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,21.0,21.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,24.0,24.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,27.0,27.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,33.0,33.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,36.0,36.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,39.0,39.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,42.0,42.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,48.0,48.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,51.0,51.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,54.0,54.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,57.0,57.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,MITM,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,18.0,18.0,7,2200000000E-01,+/-,2,7782052265E-02
+Experiment 60,Mean,DOS,21.0,21.0,8,7600000000E-01,+/-,2,0437897790E-02
+Experiment 60,Mean,DOS,24.0,24.0,8,8300000000E-01,+/-,1,9931804093E-02
+Experiment 60,Mean,DOS,27.0,27.0,9,5700000000E-01,+/-,1,2579504184E-02
+Experiment 60,Mean,DOS,30.0,30.0,9,6700000000E-01,+/-,1,1077545288E-02
+Experiment 60,Mean,DOS,33.0,33.0,9,8300000000E-01,+/-,8,0163107998E-03
+Experiment 60,Mean,DOS,36.0,36.0,9,8600000000E-01,+/-,7,2857757946E-03
+Experiment 60,Mean,DOS,39.0,39.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,42.0,42.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,45.0,45.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,48.0,48.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,51.0,51.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,54.0,54.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,57.0,57.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,DOS,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,0.0,0.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,3.0,3.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,6.0,6.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,9.0,9.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,12.0,12.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,15.0,15.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,18.0,18.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,21.0,21.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,24.0,24.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,27.0,27.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,30.0,30.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,33.0,33.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,36.0,36.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,39.0,39.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,42.0,42.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,45.0,45.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,48.0,48.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,51.0,51.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,54.0,54.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,57.0,57.0,0,0000000000E00 ,+/-,0,0000000000E00 
+Experiment 60,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
+
 Experiment 72
-Experiment 72,Start Time:,Sat May 27 11:20:15 CEST 2023
-Experiment 72,Finish Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 72,Elapsed Running Time:,1.388
-Experiment 72,Total CPU Time:,0.087
+Experiment 72,Start Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 72,Finish Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 72,Elapsed Running Time:,0.386
+Experiment 72,Total CPU Time:,0.081
 Experiment 72,Batches Completed:,1000
 Experiment 72,Experiment Name:,Experiment 72
 Experiment 72,Global Variable Settings:
@@ -683,10 +848,10 @@ Experiment 72,Mean,Sensitive Information,57.0,57.0,1,0000000000E00 ,+/-,0,000000
 Experiment 72,Mean,Sensitive Information,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
 
 Experiment 88
-Experiment 88,Start Time:,Sat May 27 11:20:15 CEST 2023
-Experiment 88,Finish Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 88,Elapsed Running Time:,0.988
-Experiment 88,Total CPU Time:,0.092
+Experiment 88,Start Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 88,Finish Time:,Sun May 28 15:42:33 CEST 2023
+Experiment 88,Elapsed Running Time:,2.44
+Experiment 88,Total CPU Time:,0.093
 Experiment 88,Batches Completed:,1000
 Experiment 88,Experiment Name:,Experiment 88
 Experiment 88,Global Variable Settings:
@@ -848,10 +1013,10 @@ Experiment 88,Mean,Sensitive Information,57.0,57.0,1,0000000000E00 ,+/-,0,000000
 Experiment 88,Mean,Sensitive Information,60.0,60.0,1,0000000000E00 ,+/-,0,0000000000E00 
 
 Experiment 99
-Experiment 99,Start Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 99,Finish Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 99,Elapsed Running Time:,0.573
-Experiment 99,Total CPU Time:,0.132
+Experiment 99,Start Time:,Sun May 28 15:42:31 CEST 2023
+Experiment 99,Finish Time:,Sun May 28 15:42:33 CEST 2023
+Experiment 99,Elapsed Running Time:,2.143
+Experiment 99,Total CPU Time:,0.136
 Experiment 99,Batches Completed:,1000
 Experiment 99,Experiment Name:,Experiment 99
 Experiment 99,Global Variable Settings:
@@ -1013,10 +1178,10 @@ Experiment 99,Mean,Sensitive Information,57.0,57.0,0,0000000000E00 ,+/-,0,000000
 Experiment 99,Mean,Sensitive Information,60.0,60.0,0,0000000000E00 ,+/-,0,0000000000E00 
 
 Experiment 128
-Experiment 128,Start Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 128,Finish Time:,Sat May 27 11:20:16 CEST 2023
-Experiment 128,Elapsed Running Time:,0.295
-Experiment 128,Total CPU Time:,0.062
+Experiment 128,Start Time:,Sun May 28 15:42:32 CEST 2023
+Experiment 128,Finish Time:,Sun May 28 15:42:33 CEST 2023
+Experiment 128,Elapsed Running Time:,0.943
+Experiment 128,Total CPU Time:,0.098
 Experiment 128,Batches Completed:,1000
 Experiment 128,Experiment Name:,Experiment 128
 Experiment 128,Global Variable Settings:
